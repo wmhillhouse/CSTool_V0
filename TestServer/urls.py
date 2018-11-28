@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^$', include('tables.urls')),
     path('admin/', admin.site.urls),
     url(r'^posts/', include('posts.urls')),
+    url(r'^accounts/', include('accounts.urls')),
     url(r'tables/', include('tables.urls')),
 ]
