@@ -2,6 +2,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^tables/(?P<id>\d+)/$', views.instruments, name='instruments')
+    url(r'^$', views.instruments, name='instruments'),
+    # url(r'/instruments/(?P<id>\d+)/$', views.instrument_details, name='instrument_details')
 ]

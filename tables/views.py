@@ -4,22 +4,22 @@ from .models import Instrument
 
 
 # Create your views here.
-def index(request):
+def instruments(request):
 
-    instruments = Instrument.objects.all()[:10]
+    instrument_table = Instrument.objects.all()
 
     context = {
         'title': 'Instruments',
-        'instruments': instruments
+        'instrument_table': instrument_table
     }
 
-    return render(request, 'tables/index.html', context)
-
-
-def instruments(request, id):
-
-    instrument = Instrument.objects.get(id=id)
-    context = {
-        'instrument': instrument,
-    }
     return render(request, 'tables/instruments.html', context)
+
+
+# def instrument_details(request, id):
+#
+#     instrument = Instrument.objects.get(id=id)
+#     context = {
+#         'instrument': instrument,
+#     }
+#     return render(request, 'tables/instruments/details.html', context)

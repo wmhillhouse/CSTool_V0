@@ -1,13 +1,45 @@
 {% extends 'accounts/layout.html' %}
 
 {% block content %}
-<h3 class="center-align blue lighten-3">{{tables.title}}</h3>
-<div class="card">
-    <div class="card-content">
-        {{instrument.tag}}
-    </div>
-    <div class="card-action"></div>
-    {{instrument.description}}
-    </div>
-</div>
+<h2>Instruments</h2>
+<ul class="collection">
+
+<!--    <table border="1">
+        <thead>
+            <tr>
+                <th><input type="text" name="h1"></th>
+                <th><input type="text" name="h2"></th>
+            </tr>
+            <tr>
+
+                <th>header 1</th>
+                <th>header 2</th>
+            </tr>
+
+        </thead>
+    </table>-->
+
+    <table border="1">
+        {% for instrument in instrument_table %}
+            <tr>
+                <td><a href="/tables/instruments/{{instrument.id}}">{{instrument.tag}}</a></td>
+                <td><a>{{instrument.description}}</a></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <table border="1">
+
+        {% for instrument in instrument_table %}
+            <tr>
+                    <td>{{instrument}}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</ul>
 {% endblock %}

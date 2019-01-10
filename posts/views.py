@@ -13,7 +13,7 @@ def index(request):
         'posts': posts
     }
 
-    return render(request, 'posts/index.html', context)
+    return render(request, 'posts/instruments.html', context)
 
 
 def details(request, id):
