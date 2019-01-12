@@ -4,20 +4,7 @@
 <h2>Instruments</h2>
 <ul class="collection">
 
-<!--    <table border="1">
-        <thead>
-            <tr>
-                <th><input type="text" name="h1"></th>
-                <th><input type="text" name="h2"></th>
-            </tr>
-            <tr>
-
-                <th>header 1</th>
-                <th>header 2</th>
-            </tr>
-
-        </thead>
-    </table>-->
+    <br> table 1 <br>
 
     <table border="1">
         {% for instrument in instrument_table %}
@@ -29,7 +16,7 @@
 
     </table>
 
-    <br>
+    <br> table 2 <br>
 
     <table border="1">
 
@@ -40,6 +27,26 @@
         {% endfor %}
 
     </table>
+
+    <br> table 3 <br>
+
+    <table border="1">
+        {% for instance in data %}
+            <tr>
+            {% for field in instance.fields.items %}
+
+                <td>{{field}}</td>
+<!--                    {% for value in field %}
+                         <td>{{value}}</td>
+                    {% endfor %}-->
+
+            {% endfor %}
+            </tr>
+
+        {% endfor %}
+    </table>
+
+
 
 </ul>
 {% endblock %}
