@@ -4,7 +4,6 @@
     <list default="true" id="1536017f-da7a-445a-91fe-8bc6434ec6f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/templates/tables/instruments.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/instruments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,16 +46,16 @@
           <entry key="cmdline" value="57" />
           <entry key="css" value="61" />
           <entry key="dummy" value="11" />
-          <entry key="html" value="4150" />
+          <entry key="html" value="4427" />
           <entry key="py" value="3962" />
-          <entry key="txt" value="7" />
+          <entry key="txt" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="61" />
-          <entry key="HTML" value="4150" />
-          <entry key="PLAIN_TEXT" value="18" />
+          <entry key="HTML" value="4427" />
+          <entry key="PLAIN_TEXT" value="43" />
           <entry key="Python" value="3962" />
           <entry key="Scratch" value="57" />
         </counts>
@@ -101,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tables/templates/tables/instruments.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+            <state relative-caret-position="207">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -304,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547095227962</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="loop through dict working">
+      <created>1547256683245</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547256683245</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -361,7 +367,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="working" />
-    <option name="LAST_COMMIT_MESSAGE" value="working" />
+    <MESSAGE value="loop through dict working" />
+    <option name="LAST_COMMIT_MESSAGE" value="loop through dict working" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/polls/views.py" />
@@ -598,8 +605,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tables/templates/tables/instruments.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+        <state relative-caret-position="207">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
         </state>
       </provider>
     </entry>

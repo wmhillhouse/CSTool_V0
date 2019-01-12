@@ -16,33 +16,33 @@
 
     </table>
 
+
     <br> table 2 <br>
 
+    <!--Create Data Table-->
     <table border="1">
 
-        {% for instrument in instrument_table %}
-            <tr>
-                    <td>{{instrument}}</td>
-            </tr>
+        <!--Create search box-->
+        <tr>
+            {% for field in data.0.fields.items %}
+            <td>Insert_Searchbox</td>
+            {% endfor %}
+        </tr>
+
+        <!--Create data headings-->
+        <tr>
+        {% for field in data.0.fields.items %}
+            <td>{{field.0}}</td>
         {% endfor %}
+        </tr>
 
-    </table>
-
-    <br> table 3 <br>
-
-    <table border="1">
+        <!--Populate data table-->
         {% for instance in data %}
             <tr>
             {% for field in instance.fields.items %}
-
-                <td>{{field}}</td>
-<!--                    {% for value in field %}
-                         <td>{{value}}</td>
-                    {% endfor %}-->
-
+                <td>{{field.1}}</td>
             {% endfor %}
             </tr>
-
         {% endfor %}
     </table>
 
