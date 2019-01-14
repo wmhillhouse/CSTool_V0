@@ -1,6 +1,7 @@
 {% extends 'accounts/layout.html' %}
 
 {% block content %}
+{% load render_table from django_tables2 %}
 
 {% load staticfiles %}
 <!--<script src="{% static 'tables/js/hello.js' %}"></script>-->
@@ -9,7 +10,7 @@
 <h2>Instruments</h2>
 <ul class="collection">
 
-    <br> table 1 <br>
+    <br>Table 1 <br>
 
     <table border="1">
         {% for instrument in instrument_table %}
@@ -22,24 +23,32 @@
     </table>
 
 
-    <br> table 2 <br>
+    <br>Table 2 <br>
 
 
     <!--Create Data Table-->
-    <table id=dataTable border="1">
+    <table class="tablesorter" id=dataTable border="1">
 
-        <!--Create filter text box-->
-        <tr>
-            {% for field in data.0.fields.items %}
-            <td><input type="text" id={{field.0}} onkeyup="filter()"></td>
-
-            {% endfor %}
-        </tr>
+        <!--&lt;!&ndash;Filter Script Variables-->
+            <!-- - startRow - Start filter at row 2 (ignore filter bar & header)-->
+            <!-- - table - Name of table to be filtered-->
+         <!--&ndash;&gt;-->
+        <!--<script>-->
+            <!--startRow = 2;   &lt;!&ndash; Start filter at row 2 (ignore filter bar & header) &ndash;&gt;-->
+            <!--table = "dataTable";-->
+        <!--</script>-->
+        <!--&lt;!&ndash;Create filter text box&ndash;&gt;-->
+        <!---->
+        <!--<tr>-->
+            <!--{% for field in data.0.fields.items %}-->
+            <!--<td><input type="text" id={{field.0}} onkeyup="filter(startRow)"></td>-->
+            <!--{% endfor %}-->
+        <!--</tr>-->
 
         <!--Create data headings-->
         <tr>
         {% for field in data.0.fields.items %}
-            <td>{{field.0}}</td>
+            <th>{{field.0}}</th>
         {% endfor %}
         </tr>
 
@@ -53,5 +62,10 @@
         {% endfor %}
     </table>
 
+    <br>Table 3<br>
+    {% render_table data2 %}
+
+
 </ul>
+
 {% endblock %}
