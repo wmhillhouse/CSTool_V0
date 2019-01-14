@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1536017f-da7a-445a-91fe-8bc6434ec6f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tables/static/tables/js/filter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tables/static/tables/js/hello.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestServer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestServer/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/templates/tables/instruments.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/instruments.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,14 +33,16 @@
           <entry key="cmdline" value="1" />
           <entry key="css" value="5" />
           <entry key="html" value="66" />
-          <entry key="py" value="138" />
+          <entry key="js" value="2" />
+          <entry key="py" value="139" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="5" />
           <entry key="HTML" value="66" />
-          <entry key="Python" value="138" />
+          <entry key="JavaScript" value="2" />
+          <entry key="Python" value="139" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
@@ -46,17 +51,19 @@
           <entry key="cmdline" value="57" />
           <entry key="css" value="61" />
           <entry key="dummy" value="11" />
-          <entry key="html" value="4427" />
-          <entry key="py" value="3962" />
+          <entry key="html" value="4633" />
+          <entry key="js" value="143" />
+          <entry key="py" value="3966" />
           <entry key="txt" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="61" />
-          <entry key="HTML" value="4427" />
+          <entry key="HTML" value="4633" />
+          <entry key="JavaScript" value="143" />
           <entry key="PLAIN_TEXT" value="43" />
-          <entry key="Python" value="3962" />
+          <entry key="Python" value="3966" />
           <entry key="Scratch" value="57" />
         </counts>
       </usages-collector>
@@ -100,8 +107,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tables/templates/tables/instruments.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state relative-caret-position="221">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tables/static/tables/js/filter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestServer/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
             </state>
           </provider>
         </entry>
@@ -128,6 +153,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>tag</find>
+      <find>static</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,7 +189,6 @@
         <option value="$PROJECT_DIR$/posts/urls.py" />
         <option value="$PROJECT_DIR$/posts/views.py" />
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/TestServer/settings.py" />
         <option value="$PROJECT_DIR$/TestServer/urls.py" />
         <option value="$PROJECT_DIR$/tables/templates/tables/layout.html" />
         <option value="$PROJECT_DIR$/tables/templates/tables/index.html" />
@@ -173,16 +198,21 @@
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/tables/urls.py" />
         <option value="$PROJECT_DIR$/tables/views.py" />
+        <option value="$PROJECT_DIR$/TestServer/settings.py" />
+        <option value="$PROJECT_DIR$/tables/static/tables/js/hello.js" />
         <option value="$PROJECT_DIR$/tables/templates/tables/instruments.html" />
+        <option value="$PROJECT_DIR$/tables/static/tables/js/filter.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1183" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -199,30 +229,33 @@
             <path>
               <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="TestServer" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
               <item name="tables" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="TestServer" type="462c0819:PsiDirectoryNode" />
               <item name="tables" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
+              <item name="tables" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="tables" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
+              <item name="tables" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="tables" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
+              <item name="tables" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -231,11 +264,6 @@
               <item name="tables" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="tables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
-              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
@@ -268,6 +296,7 @@
       <recent name="C:\DjangoServer\TestServer\tables" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\DjangoServer\TestServer\tables\static\tables" />
       <recent name="C:\DjangoServer\TestServer\tables\templates\tables" />
       <recent name="C:\DjangoServer\TestServer\tables\templates\tables\instruments" />
       <recent name="C:\DjangoServer\TestServer\webtool\templates\webtool" />
@@ -310,14 +339,21 @@
       <option name="project" value="LOCAL" />
       <updated>1547256683245</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="loop through dict working">
+      <created>1547258328207</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547258328207</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1183" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21921398" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2681624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -328,8 +364,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4995633" weight="0.32968238" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.7668122" visible="true" weight="0.32968238" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23318778" side_tool="true" visible="true" weight="0.32968238" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.76602566" visible="true" weight="0.32968238" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23397435" side_tool="true" visible="true" weight="0.32968238" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -487,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestServer/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestServer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -603,10 +632,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TestServer/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/static/tables/js/hello.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/static/tables/js/filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tables/templates/tables/instruments.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        <state relative-caret-position="221">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>

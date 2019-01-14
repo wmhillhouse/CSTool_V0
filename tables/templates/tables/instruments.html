@@ -1,6 +1,11 @@
 {% extends 'accounts/layout.html' %}
 
 {% block content %}
+
+{% load staticfiles %}
+<!--<script src="{% static 'tables/js/hello.js' %}"></script>-->
+<script src="{% static 'tables/js/filter.js' %}"></script>
+
 <h2>Instruments</h2>
 <ul class="collection">
 
@@ -19,13 +24,15 @@
 
     <br> table 2 <br>
 
-    <!--Create Data Table-->
-    <table border="1">
 
-        <!--Create search box-->
+    <!--Create Data Table-->
+    <table id=dataTable border="1">
+
+        <!--Create filter text box-->
         <tr>
             {% for field in data.0.fields.items %}
-            <td>Insert_Searchbox</td>
+            <td><input type="text" id={{field.0}} onkeyup="filter()"></td>
+
             {% endfor %}
         </tr>
 
@@ -45,8 +52,6 @@
             </tr>
         {% endfor %}
     </table>
-
-
 
 </ul>
 {% endblock %}
