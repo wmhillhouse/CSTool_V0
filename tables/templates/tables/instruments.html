@@ -3,10 +3,6 @@
 {% block content %}
 {% load render_table from django_tables2 %}
 
-{% load staticfiles %}
-<!--<script src="{% static 'tables/js/hello.js' %}"></script>-->
-<script src="{% static 'tables/js/filter.js' %}"></script>
-
 <h2>Instruments</h2>
 <ul class="collection">
 
@@ -27,30 +23,17 @@
 
 
     <!--Create Data Table-->
-    <table class="tablesorter" id=dataTable border="1">
-
-        <!--&lt;!&ndash;Filter Script Variables-->
-            <!-- - startRow - Start filter at row 2 (ignore filter bar & header)-->
-            <!-- - table - Name of table to be filtered-->
-         <!--&ndash;&gt;-->
-        <!--<script>-->
-            <!--startRow = 2;   &lt;!&ndash; Start filter at row 2 (ignore filter bar & header) &ndash;&gt;-->
-            <!--table = "dataTable";-->
-        <!--</script>-->
-        <!--&lt;!&ndash;Create filter text box&ndash;&gt;-->
-        <!---->
-        <!--<tr>-->
-            <!--{% for field in data.0.fields.items %}-->
-            <!--<td><input type="text" id={{field.0}} onkeyup="filter(startRow)"></td>-->
-            <!--{% endfor %}-->
-        <!--</tr>-->
+    <table id="testDataTable2" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <!--<table class="tablesorter" id=dataTable border="1">-->
 
         <!--Create data headings-->
-        <tr>
-        {% for field in data.0.fields.items %}
-            <th>{{field.0}}</th>
-        {% endfor %}
-        </tr>
+        <thead>
+            <tr>
+            {% for field in data.0.fields.items %}
+                <th class="th-sm">{{field.0}}</th>
+            {% endfor %}
+            </tr>
+        </thead>
 
         <!--Populate data table-->
         {% for instance in data %}
@@ -66,6 +49,16 @@
     {% render_table data2 %}
 
 
+    <!--Setup dataTable scripts -->
+    <script>
+        $(document).ready(function () {
+            $('#testDataTable2').DataTable();
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
+
+
 </ul>
+
 
 {% endblock %}
