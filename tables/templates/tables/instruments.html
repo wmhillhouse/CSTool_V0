@@ -1,30 +1,13 @@
 {% extends 'accounts/layout.html' %}
 
 {% block content %}
-{% load render_table from django_tables2 %}
+
 
 <h2>Instruments</h2>
 <ul class="collection">
 
-    <br>Table 1 <br>
-
-    <table border="1">
-        {% for instrument in instrument_table %}
-            <tr>
-                <td><a href="/tables/instruments/{{instrument.id}}">{{instrument.tag}}</a></td>
-                <td><a>{{instrument.description}}</a></td>
-            </tr>
-        {% endfor %}
-
-    </table>
-
-
-    <br>Table 2 <br>
-
-
     <!--Create Data Table-->
-    <table id="testDataTable2" class="table table-striped table-bordered" cellspacing="0" width="100%">
-    <!--<table class="tablesorter" id=dataTable border="1">-->
+    <table id="example" class="table table-striped table-bordered" width="100%">
 
         <!--Create data headings-->
         <thead>
@@ -39,23 +22,33 @@
         {% for instance in data %}
             <tr>
             {% for field in instance.fields.items %}
-                <td>{{field.1}}</td>
+                <!-- Create link to details page for "tag" field -->
+                {% if field.0 == 'tag' %}
+                    <td><a href="/tables/instruments/{{field.1}}">{{field.1}}</a></td>
+                {% else %}
+                    <td>{{field.1}}</td>
+                {% endif %}
+
             {% endfor %}
             </tr>
         {% endfor %}
     </table>
 
-    <br>Table 3<br>
-    {% render_table data2 %}
-
-
-    <!--Setup dataTable scripts -->
+        <!--Setup dataTable scripts -->
     <script>
         $(document).ready(function () {
-            $('#testDataTable2').DataTable();
+            var table = $('#example').DataTable();
             $('.dataTables_length').addClass('bs-select');
         });
     </script>
+
+
+
+
+    <br>Table 3<br>
+    {% load render_table from django_tables2 %}
+    {% render_table data2 %}
+
 
 
 </ul>
