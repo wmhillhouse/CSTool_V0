@@ -3,7 +3,6 @@ from . import views
 from django.urls import path
 
 urlpatterns = [
-    # url(r'^$', views.instruments, name='instruments'),
     path('', views.instruments, name='instruments'),
-    path('instruments/<int:my_id>/', views.instrument_details, name='instrument_details')
+    path('instruments/<str:tag>/', views.instrument_details, name='instrument_details')
 ]

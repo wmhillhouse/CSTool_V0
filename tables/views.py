@@ -1,39 +1,44 @@
 from django.shortcuts import render
 
-from .models import Instrument
-from .models import InstrumentTable
+from .models import Instrument, Alarm
+# from .models import InstrumentTable
 
 from django.core import serializers
 
 
 # Create your views here.
-def instruments(request):
 
-    # Table 1
-    instrument_table = Instrument.objects.all()
+# Creates a table of instruments
+def instruments(request):
 
     # Table 2
     data = serializers.serialize("python", Instrument.objects.all())
 
-    # Table 3
-    data2 = InstrumentTable(Instrument.objects.all())
-
     context = {
-        'title': 'Instruments',
-        'instrument_table': instrument_table,
         'data': data,
-        'data2': data2
     }
 
     return render(request, 'tables/instruments.html', context)
 
 
-def instrument_details(request, my_id):
+# Creates a detailed view of an instrument and the relevant linked information
+def instrument_details(request, tag):
 
-    # instrument = Instrument.objects.get(id=my_id)
+    try:
+        details = serializers.serialize("python", Instrument.objects.filter(tag=tag).all())
+    except Instrument.DoesNotExist:
+        details = None
+
+    try:
+        # alarms = serializers.serialize("python", Alarm.objects.filter(refObject=tag).all())
+        alarms = Alarm.objects.all().filter(refObject=tag).values('tag', 'description')
+    except Instrument.DoesNotExist:
+        details = None
 
     context = {
-        'instrument': my_id,
+        'details': details,
+        'alarms': alarms
     }
+
     return render(request, 'tables/instrument_details.html', context)
 
