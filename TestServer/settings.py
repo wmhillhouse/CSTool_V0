@@ -128,9 +128,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static_files"),
 ]
 
 STATIC_URL = '/static/'
+
+# Collects and stores all static files here
+# To collect all static files use command - python manage.py collectstatic --noinput --clear
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+
 
 

@@ -28,10 +28,12 @@ def instruments(request):
     return render(request, 'tables/instruments.html', context)
 
 
-# def instrument_details(request, id):
-#
-#     instrument = Instrument.objects.get(id=id)
-#     context = {
-#         'instrument': instrument,
-#     }
-#     return render(request, 'tables/instruments/details.html', context)
+def instrument_details(request, my_id):
+
+    # instrument = Instrument.objects.get(id=my_id)
+
+    context = {
+        'instrument': my_id,
+    }
+    return render(request, 'tables/instrument_details.html', context)
+

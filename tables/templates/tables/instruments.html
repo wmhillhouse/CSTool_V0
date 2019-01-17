@@ -1,7 +1,6 @@
-{% extends 'accounts/layout.html' %}
+{% extends 'accounts/base.html' %}
 
 {% block content %}
-
 
 <h2>Instruments</h2>
 <ul class="collection">
@@ -41,15 +40,6 @@
             $('.dataTables_length').addClass('bs-select');
         });
     </script>
-
-
-
-
-    <br>Table 3<br>
-    {% load render_table from django_tables2 %}
-    {% render_table data2 %}
-
-
 
 </ul>
 

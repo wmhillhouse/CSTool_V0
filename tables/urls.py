@@ -1,7 +1,9 @@
 from django.conf.urls import url
 from . import views
+from django.urls import path
 
 urlpatterns = [
-    url(r'^$', views.instruments, name='instruments'),
-    # url(r'/instruments/(?P<id>\d+)/$', views.instrument_details, name='instrument_details')
+    # url(r'^$', views.instruments, name='instruments'),
+    path('', views.instruments, name='instruments'),
+    path('instruments/<int:my_id>/', views.instrument_details, name='instrument_details')
 ]
