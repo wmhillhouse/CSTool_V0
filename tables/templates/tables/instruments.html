@@ -54,9 +54,11 @@
 
             // Create datatable
             var table = $('#example').DataTable( {
-                //  Create button linked to table for column visibility selection
-
+                //  Create buttons for table
                 dom: 'Bfrtip',
+                lengthMenu: [
+                    [10, 25, 50, -1 ],
+                    ['10', '25', '50', 'Show all' ]],
                 columnDefs: [
                     {
                         targets: 1,
@@ -64,6 +66,7 @@
                     }
                 ],
                 buttons: [
+                    'pageLength',
                     {
                         extend: 'colvis',
                         columns: ':not(.noVis)'
