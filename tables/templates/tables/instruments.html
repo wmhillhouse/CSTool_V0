@@ -19,7 +19,7 @@
 
         <!--Populate data table-->
         {% for instance in data %}
-            <tr class="danger">
+            <tr>
             {% for field in instance.fields.items %}
                 <!-- Create link to details page for "tag" field -->
                 {% if field.0 == 'tag' %}
@@ -31,14 +31,38 @@
             {% endfor %}
             </tr>
         {% endfor %}
+        <tfoot>
+            <tr>
+            {% for field in data.0.fields.items %}
+                <th>{{field.0}}</th>
+            {% endfor %}
+            </tr>
+        </tfoot>
     </table>
 
-        <!--Setup dataTable scripts -->
+
+    <!--Setup dataTable scripts -->
     <script>
-        $(document).ready(function () {
-            var table = $('#example').DataTable();
-            $('.dataTables_length').addClass('bs-select');
-        });
+
+        $(document).ready(function() {
+
+            $('#example').DataTable( {
+                dom: 'Bfrtip',
+                columnDefs: [
+                    {
+                        targets: 1,
+                        className: 'noVis'
+                    }
+                ],
+                buttons: [
+                    {
+                        extend: 'colvis',
+                        columns: ':not(.noVis)'
+                    }
+                ]
+            } );
+        } );
+
     </script>
 
 </ul>

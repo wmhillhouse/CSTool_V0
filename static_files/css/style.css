@@ -38,3 +38,14 @@ a:hover {
 a:active {
   color: red;
 }
+
+
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+td.highlight {
+    background-color: whitesmoke !important;
+}
