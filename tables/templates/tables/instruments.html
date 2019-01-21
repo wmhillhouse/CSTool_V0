@@ -6,20 +6,20 @@
 <ul class="collection">
 
     <!--Create Data Table-->
-    <table id="example" class="table table-striped table-bordered" width="100%">
+    <table id="example" class="table table-striped table-bordered table-condensed" width="100%">
 
         <!--Create data headings-->
         <thead>
             <tr>
             {% for field in data.0.fields.items %}
-                <th class="th-sm">{{field.0}}</th>
+                <th>{{field.0}}</th>
             {% endfor %}
             </tr>
         </thead>
 
         <!--Populate data table-->
         {% for instance in data %}
-            <tr>
+            <tr class="danger">
             {% for field in instance.fields.items %}
                 <!-- Create link to details page for "tag" field -->
                 {% if field.0 == 'tag' %}

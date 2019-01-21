@@ -1,17 +1,25 @@
 from django.shortcuts import render
 
-from .models import Instrument, Alarm
-# from .models import InstrumentTable
+from .models import CtrlObject, Instrument, Alarm, CtrlObjectTypes, AlarmTypes
 
 from django.core import serializers
 
 
-# Create your views here.
+# # All Control Objects
+# def ctrl_objects(request):
+#
+#     data = serializers.serialize("python", CtrlObject.objects.all())
+#
+#     context = {
+#         'data': data,
+#     }
+#
+#     return render(request, 'tables/all.html', context)
+
 
 # Creates a table of instruments
 def instruments(request):
 
-    # Table 2
     data = serializers.serialize("python", Instrument.objects.all())
 
     context = {
@@ -31,9 +39,9 @@ def instrument_details(request, tag):
 
     try:
         # alarms = serializers.serialize("python", Alarm.objects.filter(refObject=tag).all())
-        alarms = Alarm.objects.all().filter(refObject=tag).values('tag', 'description')
+        alarms = Alarm.objects.all().filter(refObject=tag)  # .values('tag', 'description')
     except Instrument.DoesNotExist:
-        details = None
+        alarms = None
 
     context = {
         'details': details,

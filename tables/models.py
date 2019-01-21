@@ -1,17 +1,17 @@
 from django.db import models
-import django_tables2 as tables
 # Create your models here.
 
 
 # Control Object
-# class CtrlObject(models.Model):
-#     tag = models.CharField(unique=True, max_length=100)
-#     description = models.CharField(max_length=200)
-#     type = models.ForeignKey(CtrlObjectType, on_delete=models.CASCADE)
-#
-# class CtrlObjectType(models.Model):
-#     id = models.PositiveSmallIntegerField(primary_key=True)
-#     type = models.CharField(unique=True, max_length=32)
+class CtrlObject(models.Model):
+    tag = models.CharField(unique=True, max_length=100)
+    description = models.CharField(max_length=200)
+    # CtrlObjectType = models.ForeignKey(CtrlObjectType, on_delete=models.CASCADE)
+
+
+class CtrlObjectTypes(models.Model):
+    id = models.PositiveSmallIntegerField(primary_key=True)
+    type = models.CharField(unique=True, max_length=32)
 
 
 class Instrument(models.Model):

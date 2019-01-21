@@ -8,13 +8,13 @@
 
     <!-- Details -->
     <h3 align="center">Instrument Details</h3>
-    <table id="details" class="table table-striped table-bordered" width="100%">
+    <table id="details" class="table table-striped table-bordered table-condensed" width="100%">
 
         <!--Create data headings-->
         <thead>
             <tr>
             {% for field in details.0.fields.items %}
-                <th class="th-sm">{{field.0}}</th>
+                <th>{{field.0}}</th>
             {% endfor %}
             </tr>
         </thead>
@@ -29,9 +29,10 @@
         {% endfor %}
     </table>
 
-    <!-- Alarms -->
+     <!--Alarms-->
+
     <br><h3 align="center">Alarms</h3>
-    <table id="alarms" class="table table-striped table-bordered" width="100%">
+    <table id="alarms" class="table table-striped table-bordered table-condensed" width="100%">
         {{alarms.tag}}
         <!--Create data headings-->
         <thead>

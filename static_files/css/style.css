@@ -1,1 +1,40 @@
-body {background-color: coral;}
+h1 {
+    /* color: red; */
+    text-align: center;
+}
+
+.cust-table table {
+    font-color: blue;
+}
+
+.custom-table td, th {
+    font-color: red;
+    padding-top: 0.0rem;
+    padding-bottom: 0.0rem;
+}
+
+#bootstrap-overrides td {
+    height: 2px;
+}
+
+
+
+/* unvisited link */
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: purple;
+}
+
+/* mouse over link */
+a:hover {
+  color: Teal;
+}
+
+/* selected link */
+a:active {
+  color: red;
+}
