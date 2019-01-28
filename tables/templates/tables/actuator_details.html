@@ -5,20 +5,20 @@
 <ul class="collection">
 
     <!-- Details -->
-    <h3 align="center">Instrument Details</h3>
-    <table id="detailsTbl" class="table table-striped table-bordered table-condensed" width="100%">
+    <h3 align="center">{{title}} Details</h3>
+    <table id="dataTbl" class="table table-striped table-bordered table-condensed" width="100%">
 
         <!--Create data headings-->
         <thead>
             <tr>
-            {% for field in details.0.fields.items %}
+            {% for field in gen_data.0.fields.items %}
                 <th>{{field.0}}</th>
             {% endfor %}
             </tr>
         </thead>
 
         <!--Populate data table-->
-        {% for instance in details %}
+        {% for instance in data %}
             <tr>
             {% for field in instance.fields.items %}
                 <td>{{field.1}}</td>
@@ -30,7 +30,5 @@
     {% include "tables\alarms_table.html" %}
 
 </ul>
-
-
 
 {% endblock %}

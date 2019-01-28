@@ -1,9 +1,8 @@
 from django.shortcuts import render
 
-from .models import CtrlObject, Instrument, Alarm, CtrlObjectTypes, AlarmTypes
+from .models import CtrlObject, Instrument, Alarm, CtrlObjectTypes, AlarmTypes, Drive
 
 from django.core import serializers
-
 
 # # All Control Objects
 # def ctrl_objects(request):
@@ -50,3 +49,43 @@ def instrument_details(request, tag):
 
     return render(request, 'tables/instrument_details.html', context)
 
+
+# Creates a table of instruments
+def drives(request):
+
+    data = serializers.serialize("python", Drive.objects.all())
+
+    context = {
+        'title': "Drives",
+        'address': "drives",
+        'data': data,
+    }
+
+    return render(request, 'tables/general_table.html', context)
+
+
+# Creates a detailed view of an instrument and the relevant linked information
+def actuator_details(request, tag):
+
+    try:
+        data = serializers.serialize("python", Drive.objects.filter(tag=tag).all())
+    except Drive.DoesNotExist:
+        data = None
+
+    try:
+        alarms = Alarm.objects.all().filter(refObject=tag)
+    except Drive.DoesNotExist:
+        alarms = None
+
+    try:
+        interlocks = Alarm.objects.all().filter(refObject=tag)
+    except Drive.DoesNotExist:
+        interlocks = None
+
+    context = {
+        'general': data,
+        'alarms': alarms,
+        'interlocks': interlocks,
+    }
+
+    return render(request, 'tables/actuator_details.html', context)
