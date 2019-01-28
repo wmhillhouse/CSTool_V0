@@ -22,10 +22,12 @@ def instruments(request):
     data = serializers.serialize("python", Instrument.objects.all())
 
     context = {
+        'title': "Instruments",
+        'address': "instruments",
         'data': data,
     }
 
-    return render(request, 'tables/instruments.html', context)
+    return render(request, 'tables/general_table.html', context)
 
 
 # Creates a detailed view of an instrument and the relevant linked information
@@ -37,8 +39,7 @@ def instrument_details(request, tag):
         details = None
 
     try:
-        # alarms = serializers.serialize("python", Alarm.objects.filter(refObject=tag).all())
-        alarms = Alarm.objects.all().filter(refObject=tag)  # .values('tag', 'description')
+        alarms = Alarm.objects.all().filter(refObject=tag)
     except Instrument.DoesNotExist:
         alarms = None
 
@@ -83,7 +84,7 @@ def actuator_details(request, tag):
         interlocks = None
 
     context = {
-        'general': data,
+        'data': data,
         'alarms': alarms,
         'interlocks': interlocks,
     }

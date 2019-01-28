@@ -1,4 +1,4 @@
-{% extends 'accounts/base.html' %}
+{% extends 'accounts/header.html' %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
         <!--Create data headings-->
         <thead>
             <tr>
-            {% for field in gen_data.0.fields.items %}
+            {% for field in data.0.fields.items %}
                 <th>{{field.0}}</th>
             {% endfor %}
             </tr>
