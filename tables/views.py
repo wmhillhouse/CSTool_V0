@@ -19,6 +19,7 @@ from django.core import serializers
 # Creates a table of instruments
 def instruments(request):
 
+    # Query all fields for all instruments and store in an ordered structure
     data = serializers.serialize("python", Instrument.objects.all())
 
     context = {
@@ -33,18 +34,15 @@ def instruments(request):
 # Creates a detailed view of an instrument and the relevant linked information
 def instrument_details(request, tag):
 
-    try:
-        details = serializers.serialize("python", Instrument.objects.filter(tag=tag).all())
-    except Instrument.DoesNotExist:
-        details = None
+    # Query all fields for specified instrument and store in an ordered structure
+    data = serializers.serialize("python", Instrument.objects.all().filter(tag=tag))
 
-    try:
-        alarms = Alarm.objects.all().filter(refObject=tag)
-    except Instrument.DoesNotExist:
-        alarms = None
+    # Query all alrams allocated to specified instrument
+    alarms = Alarm.objects.all().filter(refObject=tag)
 
     context = {
-        'details': details,
+        'title': "Instrument Details",
+        'data': data,
         'alarms': alarms
     }
 
@@ -54,6 +52,7 @@ def instrument_details(request, tag):
 # Creates a table of instruments
 def drives(request):
 
+    # Query all fields for all drives and store in an ordered structure
     data = serializers.serialize("python", Drive.objects.all())
 
     context = {
@@ -68,22 +67,17 @@ def drives(request):
 # Creates a detailed view of an instrument and the relevant linked information
 def actuator_details(request, tag):
 
-    try:
-        data = serializers.serialize("python", Drive.objects.filter(tag=tag).all())
-    except Drive.DoesNotExist:
-        data = None
+    # Query all fields for specified drive and store in an ordered structure
+    data = serializers.serialize("python", Drive.objects.filter(tag=tag).all())
 
-    try:
-        alarms = Alarm.objects.all().filter(refObject=tag)
-    except Drive.DoesNotExist:
-        alarms = None
+    # Query all alarms allocated to specified drive
+    alarms = Alarm.objects.all().filter(refObject=tag)
 
-    try:
-        interlocks = Alarm.objects.all().filter(refObject=tag)
-    except Drive.DoesNotExist:
-        interlocks = None
+    # Query all interlocks allocated to specified drive
+    interlocks = Alarm.objects.all().filter(refObject=tag)
 
     context = {
+        'title': "Drive Details",
         'data': data,
         'alarms': alarms,
         'interlocks': interlocks,

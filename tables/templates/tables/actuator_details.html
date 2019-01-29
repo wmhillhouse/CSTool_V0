@@ -3,31 +3,38 @@
 {% block content %}
 
 <ul class="collection">
+    <!-- Display data if successful query -->
+    {% if data %}
+        <!-- Details -->
+        <h3 align="center">{{title}}</h3>
+        <table id="dataTbl" class="table table-striped table-bordered table-condensed" width="100%">
 
-    <!-- Details -->
-    <h3 align="center">{{title}} Details</h3>
-    <table id="dataTbl" class="table table-striped table-bordered table-condensed" width="100%">
+            <!--Create data headings-->
+            <thead>
+                <tr>
+                {% for field in data.0.fields.items %}
+                    <th>{{field.0}}</th>
+                {% endfor %}
+                </tr>
+            </thead>
 
-        <!--Create data headings-->
-        <thead>
-            <tr>
-            {% for field in data.0.fields.items %}
-                <th>{{field.0}}</th>
+            <!--Populate data table-->
+            {% for instance in data %}
+                <tr>
+                {% for field in instance.fields.items %}
+                    <td>{{field.1}}</td>
+                {% endfor %}
+                </tr>
             {% endfor %}
-            </tr>
-        </thead>
+        </table>
 
-        <!--Populate data table-->
-        {% for instance in data %}
-            <tr>
-            {% for field in instance.fields.items %}
-                <td>{{field.1}}</td>
-            {% endfor %}
-            </tr>
-        {% endfor %}
-    </table>
+        {% include "tables\alarms_table.html" %}
 
-    {% include "tables\alarms_table.html" %}
+        <br><h3 align="center">Interlocks</h3>
+
+    {% else %}
+        <h3 align="center">Actuator Not Found</h3>
+    {% endif %}
 
 </ul>
 
