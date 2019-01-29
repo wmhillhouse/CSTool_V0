@@ -48,14 +48,36 @@
     <!-- CSV Button -->
     <script type="text/javascript" src="{% static 'js/jszip.min.js' %}"></script>
 
-
-
-
     <title>CSTool</title>
 </head>
 <body>
     <header>
+        <br>
         <h1>Test Project</h1>
+
+        <div align="right">
+
+            <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown">Navigation</button>
+
+            <div class="dropdown-menu">
+
+                <a class="dropdown-item" href="/admin/">Admin</a>
+                <a class="dropdown-item" href="/documents/">Documents</a>
+                <a class="dropdown-item" href="/reports/">Reports</a>
+                <div class="dropdown-divider"></div>
+                <a>Tables</a>
+                <a class="dropdown-item" href="/tables/documents">Reference Documents</a>
+                <a class="dropdown-item" href="/tables/instruments">Instruments</a>
+                <a class="dropdown-item" href="/tables/actuators">Actuators</a>
+                <a class="dropdown-item" href="/tables/drives">Drives</a>
+                <a class="dropdown-item" href="/tables/valves">Valves</a>
+
+            </div>
+
+            <button class="btn btn-link" type="button">Logout</button>
+
+        </div>
+        <hr />
     </header>
     <p></p>
     <div class="container">

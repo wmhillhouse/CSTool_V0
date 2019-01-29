@@ -49,3 +49,8 @@ tfoot input {
 td.highlight {
     background-color: whitesmoke !important;
 }
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}
