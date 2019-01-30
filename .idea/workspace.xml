@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1536017f-da7a-445a-91fe-8bc6434ec6f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/templates/tables/actuator_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/actuator_details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/templates/tables/alarms_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/alarms_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/templates/tables/instrument_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/instrument_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +34,7 @@
         <counts>
           <entry key="cmdline" value="1" />
           <entry key="css" value="35" />
-          <entry key="html" value="123" />
+          <entry key="html" value="126" />
           <entry key="js" value="13" />
           <entry key="py" value="188" />
           <entry key="scss" value="2" />
@@ -44,7 +43,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="35" />
-          <entry key="HTML" value="123" />
+          <entry key="HTML" value="126" />
           <entry key="JavaScript" value="13" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Python" value="188" />
@@ -56,18 +55,18 @@
           <entry key="cmdline" value="57" />
           <entry key="css" value="550" />
           <entry key="dummy" value="12" />
-          <entry key="html" value="10098" />
+          <entry key="html" value="10233" />
           <entry key="js" value="431" />
           <entry key="py" value="7224" />
-          <entry key="txt" value="1158" />
+          <entry key="txt" value="1295" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="550" />
-          <entry key="HTML" value="10098" />
+          <entry key="HTML" value="10233" />
           <entry key="JavaScript" value="431" />
-          <entry key="PLAIN_TEXT" value="1170" />
+          <entry key="PLAIN_TEXT" value="1307" />
           <entry key="Python" value="7224" />
           <entry key="Scratch" value="57" />
         </counts>
@@ -77,49 +76,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarms_table.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tables/templates/tables/instrument_details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="35" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tables/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tables/templates/tables/general_table.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <state relative-caret-position="326">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tables/templates/tables/actuator_details.html">
+        <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+            <state relative-caret-position="357">
+              <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarms_table.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+              <folding>
+                <element signature="e#1145#1152#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -194,13 +175,13 @@
         <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/tables/urls.py" />
         <option value="$PROJECT_DIR$/static_files/css/style.css" />
-        <option value="$PROJECT_DIR$/accounts/templates/accounts/header.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/tables/templates/tables/general_table.html" />
-        <option value="$PROJECT_DIR$/tables/templates/tables/alarms_table.html" />
         <option value="$PROJECT_DIR$/tables/views.py" />
         <option value="$PROJECT_DIR$/tables/templates/tables/instrument_details.html" />
         <option value="$PROJECT_DIR$/tables/templates/tables/actuator_details.html" />
+        <option value="$PROJECT_DIR$/tables/templates/tables/alarms_table.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/header.html" />
       </list>
     </option>
   </component>
@@ -224,6 +205,35 @@
             <path>
               <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="TestServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestServer" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
@@ -428,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548730169337</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Handled error for looking up details of an item that does not exist.">
+      <created>1548733547849</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1548733547849</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -523,7 +540,8 @@
     <MESSAGE value="Instruments using general_table." />
     <MESSAGE value="Fixed footer search bars." />
     <MESSAGE value="Added navigation bar to header. Filled out with most links but most of them don't work." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added navigation bar to header. Filled out with most links but most of them don't work." />
+    <MESSAGE value="Handled error for looking up details of an item that does not exist." />
+    <option name="LAST_COMMIT_MESSAGE" value="Handled error for looking up details of an item that does not exist." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/css/mdb.min.css" />
@@ -695,13 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static_files/css/mdb.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -721,10 +732,17 @@
     <entry file="file://$PROJECT_DIR$/accounts/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarms_table.html">
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/actuator_details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="-133">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/general_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -738,24 +756,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/general_table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tables/templates/tables/instrument_details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="35" selection-end-column="15" />
+        <state relative-caret-position="326">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/actuator_details.html">
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarms_table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state relative-caret-position="462">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding>
+            <element signature="e#1145#1152#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
         </state>
       </provider>
     </entry>
