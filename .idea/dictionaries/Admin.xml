@@ -5,6 +5,7 @@
       <w>datatables</w>
       <w>endblock</w>
       <w>endfor</w>
+      <w>setpoint</w>
     </words>
   </dictionary>
 </component>

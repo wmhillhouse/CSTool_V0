@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import CtrlObject, Instrument, Alarm, CtrlObjectTypes, AlarmTypes, Drive
+from .models import CtrlObject, Instrument, Alarm, Drive
 
 from django.core import serializers
 
@@ -42,6 +42,7 @@ def instrument_details(request, tag):
 
     context = {
         'title': "Instrument Details",
+        'tag': tag,
         'data': data,
         'alarms': alarms
     }
@@ -78,6 +79,7 @@ def actuator_details(request, tag):
 
     context = {
         'title': "Drive Details",
+        'tag': tag,
         'data': data,
         'alarms': alarms,
         'interlocks': interlocks,
