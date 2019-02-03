@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'accounts',
     'tables',
+    'edit',
     'django_tables2',
     'django.contrib.admin',
     'django.contrib.auth',

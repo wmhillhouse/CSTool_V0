@@ -1,12 +1,25 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
-from .models import CtrlObject, Instrument, DigitalInput, Alarm, Drive
 
-admin.site.register(CtrlObject)
+class CtrlObjectAdmin(admin.ModelAdmin):
 
-admin.site.register(Instrument)
-admin.site.register(DigitalInput)
-admin.site.register(Drive)
+    search_fields = ['tag', 'description']
 
-admin.site.register(Alarm)
+    list_display = ['tag', 'description']
+
+
+class DigitalIOAdmin(admin.ModelAdmin):
+
+    search_fields = ['tag', 'description']
+
+    list_display = ['tag', 'description']
+
+
+admin.site.register(models.CtrlObject, CtrlObjectAdmin)
+admin.site.register(models.Instrument)
+admin.site.register(models.DigitalIO, DigitalIOAdmin)
+
+admin.site.register(models.Drive)
+
+admin.site.register(models.Alarm)

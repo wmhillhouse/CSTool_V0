@@ -1,5 +1,5 @@
 from django.db import models
-# Create your models here.
+from .constants import *
 
 
 # Control Object
@@ -7,42 +7,32 @@ class CtrlObject(models.Model):
     class Meta:
         verbose_name_plural = "Control Objects"
 
-    CTRL_OBJ_TYPE = (
-        ('DI', 'Digital Input'),
-        ('DO', 'Digital Output'),
-        ('AI', 'Analog Input'),
-        ('AO', 'Analog Output'),
-        ('DRiVE', 'Drive'),
-        ('VALVE', 'Valve'),
-    )
-
-    tag = models.CharField(unique=True, max_length=100)
-    description = models.CharField(max_length=200, blank=True, default='')
+    tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
+    description = models.CharField(max_length=DESC_TEXT_LEN, blank=True, default='')
     type = models.CharField(max_length=32, choices=CTRL_OBJ_TYPE)
 
     def __str__(self):
         return self.tag
 
 
-class DigitalInput (models.Model):
-    class Meta:
-            verbose_name_plural = 'Digital Inputs'
-
+class Instrument(models.Model):
     tag = models.ForeignKey(CtrlObject, on_delete=models.CASCADE)
+    io_allocation = models.CharField(max_length=TAG_TEXT_LEN, blank=True, default='')
+    cabinet = models.CharField(max_length=TAG_TEXT_LEN, blank=True, default='')
+    pid_doc = models.CharField(max_length=DOC_TEXT_LEN, blank=True, default='')
+    schematic_doc = models.CharField(max_length=DOC_TEXT_LEN, blank=True, default='')
+    termination_doc = models.CharField(max_length=DOC_TEXT_LEN, blank=True, default='')
+
+
+class DigitalIO (models.Model):
+    class Meta:
+            verbose_name_plural = 'Digital IO'
+
+    tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
+    description = models.CharField(max_length=DESC_TEXT_LEN, blank=True, default='')
+    type = models.CharField(max_length=32, choices=DIGITAL_IO_TYPE, default='DI')
     on_description = models.CharField(max_length=100, default='On')
     off_description = models.CharField(max_length=100, default='Off')
-
-
-class Instrument(models.Model):
-
-    tag = models.CharField(unique=True, max_length=100)
-    description = models.CharField(max_length=200)
-    io_allocation = models.CharField(max_length=100, blank=True, default='')
-
-    # doc_ref = models.CharField(max_length=200, default=None)
-
-    def __str__(self):
-        return self.tag
 
 
 # class Digital_IO(models.Model):
@@ -71,26 +61,12 @@ class Instrument(models.Model):
 
 
 class Alarm(models.Model):
-    ALARM_TYPES = (
-        ('D',   'Digital'),
-        ('HH',  'High High'),
-        ('H',   'High'),
-        ('L',   'Low'),
-        ('LL',  'Low Low')
-    )
 
-    ALARM_PRIORITIES = (
-        (1, 'Critical'),
-        (2, 'High'),
-        (3, 'Medium'),
-        (4, 'Low')
-    )
-
-    tag = models.CharField(unique=True, max_length=100)
-    description = models.CharField(max_length=200)
-    type = models.CharField(max_length=32, choices=ALARM_TYPES, default='D')
+    tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
+    description = models.CharField(max_length=DESC_TEXT_LEN)
+    type = models.CharField(max_length=SHORT_TEXT_LEN, choices=ALARM_TYPES, default='D')
     priority = models.PositiveSmallIntegerField(choices=ALARM_PRIORITIES, default=4)
-    refObject = models.ForeignKey(CtrlObject, on_delete=models.CASCADE)
+    refObject = models.CharField(max_length=TAG_TEXT_LEN, blank=True, default='')
 
     def __str__(self):
         return self.tag
@@ -123,7 +99,7 @@ class Alarm(models.Model):
 
 # Create your models here.
 class Drive(models.Model):
-    tag = models.CharField(unique=True, max_length=100)
+    tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
 
     def __str__(self):
         return self.tag

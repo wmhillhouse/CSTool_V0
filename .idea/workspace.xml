@@ -2,30 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1536017f-da7a-445a-91fe-8bc6434ec6f2" name="Default Changelist" comment="Added modal for &quot;Add New Alarm&quot; button in alarms_table.">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Admin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Admin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edit/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tables/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tables/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tables/templates/tables/alarm_create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tables/templates/tables/alarm_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tables/templates/tables/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestServer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestServer/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestServer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestServer/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/templates/posts/details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/templates/posts/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/templates/posts/layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/migrations/0002_auto_20181121_0321.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/migrations/0003_remove_instrument_doc_ref.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/templates/tables/alarms_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/alarms_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,29 +35,29 @@
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.49" value="1" />
-          <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.53" value="2" />
           <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.86" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cmdline" value="1" />
           <entry key="css" value="35" />
-          <entry key="html" value="132" />
+          <entry key="html" value="144" />
           <entry key="js" value="13" />
-          <entry key="py" value="200" />
+          <entry key="py" value="226" />
           <entry key="scss" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="35" />
-          <entry key="HTML" value="132" />
+          <entry key="HTML" value="144" />
           <entry key="JavaScript" value="13" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="200" />
+          <entry key="Python" value="226" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
@@ -76,19 +66,19 @@
           <entry key="cmdline" value="57" />
           <entry key="css" value="550" />
           <entry key="dummy" value="12" />
-          <entry key="html" value="10483" />
+          <entry key="html" value="10654" />
           <entry key="js" value="431" />
-          <entry key="py" value="9286" />
+          <entry key="py" value="12375" />
           <entry key="txt" value="1364" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="550" />
-          <entry key="HTML" value="10483" />
+          <entry key="HTML" value="10654" />
           <entry key="JavaScript" value="431" />
           <entry key="PLAIN_TEXT" value="1376" />
-          <entry key="Python" value="9286" />
+          <entry key="Python" value="12375" />
           <entry key="Scratch" value="57" />
         </counts>
       </usages-collector>
@@ -96,72 +86,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tables/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tables/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+            <state relative-caret-position="357">
+              <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/MySQLdb/cursors.py">
+        <entry file="file://$PROJECT_DIR$/tables/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="411" selection-start-line="411" selection-end-line="411" />
+            <state relative-caret-position="298">
+              <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestServer/settings.py">
+        <entry file="file://$PROJECT_DIR$/tables/templates/tables/general_table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestServer/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestServer/urls.py">
+        <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarms_table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="9" />
-              <folding>
-                <element signature="e#635#667#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="241">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestServer/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tables/admin.py">
+        <entry file="file://$PROJECT_DIR$/accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarm_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1190">
+              <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tables/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -172,8 +167,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tables/views.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2873">
+              <caret line="169" column="30" lean-forward="true" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/home.html">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+              <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -183,8 +190,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -204,14 +211,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webtool/models.py" />
-        <option value="$PROJECT_DIR$/webtool/admin.py" />
-        <option value="$PROJECT_DIR$/webtool/templates/webtool/index.html" />
-        <option value="$PROJECT_DIR$/webtool/views.py" />
-        <option value="$PROJECT_DIR$/webtool/migrations/0001_initial.py" />
-        <option value="$PROJECT_DIR$/tables/apps.py" />
-        <option value="$PROJECT_DIR$/polls/apps.py" />
-        <option value="$PROJECT_DIR$/posts/admin.py" />
         <option value="$PROJECT_DIR$/posts/models.py" />
         <option value="$PROJECT_DIR$/posts/templates/posts/index.html" />
         <option value="$PROJECT_DIR$/posts/templates/posts/details.html" />
@@ -230,7 +229,6 @@
         <option value="$PROJECT_DIR$/accounts/templates/accounts/layout.html" />
         <option value="$PROJECT_DIR$/tables/templates/tables/all.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/formats.html" />
-        <option value="$PROJECT_DIR$/accounts/templates/accounts/head.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/tables/templates/tables/instruments.html" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/base.html" />
@@ -242,25 +240,34 @@
         <option value="$PROJECT_DIR$/accounts/templates/accounts/home.html" />
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
-        <option value="$PROJECT_DIR$/tables/urls.py" />
         <option value="$PROJECT_DIR$/static_files/css/style.css" />
         <option value="$PROJECT_DIR$/accounts/templates/accounts/login.html" />
-        <option value="$PROJECT_DIR$/tables/templates/tables/general_table.html" />
         <option value="$PROJECT_DIR$/tables/templates/tables/instrument_details.html" />
         <option value="$PROJECT_DIR$/tables/templates/tables/actuator_details.html" />
-        <option value="$PROJECT_DIR$/accounts/templates/accounts/header.html" />
-        <option value="$PROJECT_DIR$/tables/templates/tables/alarms_table.html" />
-        <option value="$PROJECT_DIR$/TestServer/settings.py" />
         <option value="$PROJECT_DIR$/TestServer/urls.py" />
+        <option value="$PROJECT_DIR$/TestServer/settings.py" />
+        <option value="$PROJECT_DIR$/edit/forms.py" />
+        <option value="$PROJECT_DIR$/edit/views.py" />
+        <option value="$PROJECT_DIR$/tables/templates/tables/create.html" />
+        <option value="$PROJECT_DIR$/tables/templates/tables/create_alarm.html" />
+        <option value="$PROJECT_DIR$/tables/forms.py" />
+        <option value="$PROJECT_DIR$/tables/urls.py" />
+        <option value="$PROJECT_DIR$/tables/templates/tables/alarm_create.html" />
+        <option value="$PROJECT_DIR$/tables/templates/tables/alarms_table.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/head.html" />
+        <option value="$PROJECT_DIR$/tables/templates/tables/general_table.html" />
+        <option value="$PROJECT_DIR$/accounts/templates/accounts/header.html" />
+        <option value="$PROJECT_DIR$/tables/templates/tables/alarm_form.html" />
         <option value="$PROJECT_DIR$/tables/views.py" />
-        <option value="$PROJECT_DIR$/tables/admin.py" />
+        <option value="$PROJECT_DIR$/tables/constants.py" />
         <option value="$PROJECT_DIR$/tables/models.py" />
+        <option value="$PROJECT_DIR$/tables/admin.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="982" />
+    <option name="width" value="1216" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -271,7 +278,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -288,7 +294,7 @@
               <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="TestServer" type="462c0819:PsiDirectoryNode" />
               <item name="tables" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TestServer" type="b2602c69:ProjectViewProjectNode" />
@@ -303,6 +309,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,19 +320,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\DjangoServer\TestServer\edit\templates" />
+      <recent name="C:\DjangoServer\TestServer\static_files" />
+      <recent name="C:\DjangoServer\TestServer\accounts" />
+      <recent name="C:\DjangoServer\TestServer\static\js" />
+      <recent name="C:\DjangoServer\TestServer\tables\static\tables" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\DjangoServer\TestServer\tables\templates\tables" />
       <recent name="C:\DjangoServer\TestServer" />
       <recent name="C:\DjangoServer\TestServer\accounts\templates\accounts" />
       <recent name="C:\DjangoServer\TestServer\static_files" />
       <recent name="C:\DjangoServer\TestServer\external" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\DjangoServer\TestServer\static_files" />
-      <recent name="C:\DjangoServer\TestServer\accounts" />
-      <recent name="C:\DjangoServer\TestServer\static\js" />
-      <recent name="C:\DjangoServer\TestServer\tables\static\tables" />
-      <recent name="C:\DjangoServer\TestServer\tables\templates\tables" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -497,10 +504,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="982" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1216" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.40572035" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28947368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -511,8 +518,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49920383" weight="0.3299293" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49761146" weight="0.32914376" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.7616525" visible="true" weight="0.32968238" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23834746" side_tool="true" visible="true" weight="0.32968238" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.7606112" visible="true" weight="0.32968238" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.2393888" side_tool="true" visible="true" weight="0.32968238" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49920383" weight="0.3299293" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -584,24 +591,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added modal for &quot;Add New Alarm&quot; button in alarms_table." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/accounts/static/tables/css/style.css" />
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.css" />
-    <entry file="file://$PROJECT_DIR$/accounts/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js" />
-    <entry file="file://$PROJECT_DIR$/js/plugins.js" />
-    <entry file="file://$PROJECT_DIR$/js/addons/datatables.js" />
-    <entry file="file://$PROJECT_DIR$/css/addons/datatables.css" />
-    <entry file="file://$PROJECT_DIR$/static_files/js/addons/datatables.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css" />
     <entry file="file://$PROJECT_DIR$/static/style.css" />
     <entry file="file://$PROJECT_DIR$/static_files/scss/core/bootstrap/_functions.scss">
@@ -615,14 +604,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/layout.html" />
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/head.html" />
-    <entry file="file://$PROJECT_DIR$/tables/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -630,57 +611,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alarms_table.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/alarms_table.html" />
     <entry file="file://$PROJECT_DIR$/tables/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="21" lean-forward="true" selection-end-line="64" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/drives.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/instruments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="52" lean-forward="true" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/all.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/js/general_table.js.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/js/general_table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="52" column="4" selection-start-line="8" selection-end-line="52" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/test.html" />
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/drives.html" />
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/instruments.html" />
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/all.html" />
+    <entry file="file://$PROJECT_DIR$/tables/js/general_table.js.py" />
+    <entry file="file://$PROJECT_DIR$/tables/js/general_table.js" />
     <entry file="file://$PROJECT_DIR$/accounts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,20 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="876">
           <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -721,41 +651,6 @@
     <entry file="file://$PROJECT_DIR$/static_files/js/buttons.colVis.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/actuator_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="51" column="65" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/general_table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/instrument_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarms_table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/MySQLdb/connections.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -763,12 +658,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tables/tests.py" />
+    <entry file="file://$PROJECT_DIR$/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/MySQLdb/cursors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="6834">
           <caret line="411" selection-start-line="411" selection-end-line="411" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestServer/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestServer/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/TestServer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -780,56 +693,164 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestServer/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/actuator_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="41" selection-start-line="41" selection-end-line="41" selection-end-column="14" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestServer/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="258">
+          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestServer/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/tables/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/views.py">
+    <entry file="file://$PROJECT_DIR$/edit/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/admin.py">
+    <entry file="file://$PROJECT_DIR$/edit/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/edit/forms.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="88">
+          <caret line="13" column="58" lean-forward="true" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tables/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+        <state relative-caret-position="221">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/instrument_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarm_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/general_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarms_table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2873">
+          <caret line="169" column="30" lean-forward="true" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/templates/accounts/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/alarm_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tables/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="357">
+          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
