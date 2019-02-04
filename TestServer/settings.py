@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'accounts',
     'tables',
     'edit',
+    'widget_tweaks',
     'django_tables2',
     'django.contrib.admin',
     'django.contrib.auth',

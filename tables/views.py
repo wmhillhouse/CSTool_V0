@@ -171,9 +171,9 @@ class AlarmCreate(CreateView):
     model = Alarm
     fields = '__all__'
 
-    def get_success_url(self):
-        return reverse('detail', kwargs={'slug': self.object.slug})
+    def form_valid(self, form):
+        self.object = form.save()
+        return render(self.request, 'table/alarm.html', {'alarm': self.object})
 
     # fields = ['tag',
     #           'description']
-

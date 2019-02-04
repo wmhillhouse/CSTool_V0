@@ -63,7 +63,7 @@ class DigitalIO (models.Model):
 class Alarm(models.Model):
 
     tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
-    description = models.CharField(max_length=DESC_TEXT_LEN)
+    description = models.CharField(max_length=DESC_TEXT_LEN, blank=True, default='')
     type = models.CharField(max_length=SHORT_TEXT_LEN, choices=ALARM_TYPES, default='D')
     priority = models.PositiveSmallIntegerField(choices=ALARM_PRIORITIES, default=4)
     refObject = models.CharField(max_length=TAG_TEXT_LEN, blank=True, default='')
