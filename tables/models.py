@@ -97,6 +97,20 @@ class Alarm(models.Model):
 #     priority = models.PositiveSmallIntegerField(choices=ALARM_PRIORITIES, default=4)
 
 
+# Reference Lists
+class Reference(models.Model):
+
+    tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
+    description = models.CharField(max_length=DESC_TEXT_LEN,
+                                   blank=True,
+                                   default='')
+    type = models.CharField(max_length=32,
+                            choices=OBJ_TYPE)
+
+    def __str__(self):
+        return self.tag
+
+
 # Create your models here.
 class Drive(models.Model):
     tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)

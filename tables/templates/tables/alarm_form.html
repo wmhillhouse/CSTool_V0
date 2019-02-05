@@ -1,62 +1,66 @@
-{% extends 'accounts/header.html' %}
+{% extends 'tables/head.html' %}
 
 {% block content %}
-
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Add Alarm</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <form action="" method="post">
-                    {% csrf_token %}
-                    {{ form.non_field_errors }}
-
-                    <table>
-                        <!--Type field-->
-                        <tr class = "fieldWrapper">
-                            <td for="{{ form.type.id_for_label }}">Type:</td>
-                            <td>{{ form.type }}</td>
-                            <td>{{ form.type.errors }}</td>
-                        </tr>
-
-                        <!--Tag field-->
-                        <tr class = "fieldWrapper">
-                            <td for="{{ form.tag.id_for_label }}">Tag:</td>
-                            <td>{{ form.tag }}</td>
-                            <td>{{ form.tag.errors }}</td>
-                        </tr>
-
-                        <!--Description field-->
-                        <tr class = "fieldWrapper">
-                            <td for="{{ form.description.id_for_label }}">Description:</td>
-                            <td>{{ form.description }}</td>
-                            <td>{{ form.description.errors }}</td>
-                        </tr>
-
-                        <!--Priority field-->
-                        <tr class = "fieldWrapper">
-                            <td for="{{ form.priority.id_for_label }}">Priority:</td>
-                            <td>{{ form.priority }}</td>
-                            <td>{{ form.priority.errors }}</td>
-                        </tr>
-
-                        <!--Reference Object (Pre-Filled)-->
-                        <tr>
-                            <td>Reference Object:</td>
-                            <td>TT1101</td>
-                        </tr>
-
-                    </table>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+<div id='divId' class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Add Alarm</h5>
+            <button type="button" class="close" data-dismiss="modal" data-toggle="modal" data-target="#addAlarmModal">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
-    </div>
+
+        <div class="modal-body">
+            <form id="alarm_form" method="post" action="{% url 'alarm-create' %}">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <table>
+                    <!--Type field-->
+                    <tr>
+                        <td>Type:</td>
+                        <td>{{ form.type }}</td>
+                        <td>{{ form.type.errors }}</td>
+                    </tr>
+
+                    <!--Tag field-->
+                    <tr>
+                        <td>Tag:</td>
+                        <td>{{ form.tag }}</td>
+                        <td>{{ form.tag.errors }}</td>
+                    </tr>
+
+                    <!--Description field-->
+                    <tr>
+                        <td>Description:</td>
+                        <td>{{ form.description }}</td>
+                        <td>{{ form.description.errors }}</td>
+                    </tr>
+
+                    <!--Priority field-->
+                    <tr>
+                        <td>Priority:</td>
+                        <td>{{ form.priority }}</td>
+                        <td>{{ form.priority.errors }}</td>
+                    </tr>
+
+                    <!--Reference Object-->
+                    <tr>
+                        <td>Reference Object:</td>
+                        <td>{{ form.refObject }}</td>
+                        <td>{{ form.refObject.errors }}</td>
+                    </tr>
+
+                </table>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+   </div>
+</div>
+
+<script>
+    $(function () {
+        $('#addAlarmModal').modal('toggle');
+    });
+</script>
 
 {% endblock %}
-
