@@ -1,3 +1,7 @@
+
+<!-- Create alarms table if it exists -->
+
+
 <!--Alarms Table-->
 <br><h3 align="center">Alarms</h3>
 <table id="alarmsTbl" class="table table-striped table-bordered table-condensed" width="100%">
@@ -10,7 +14,7 @@
         </tr>
     </thead>
 
-    <!--Populate data table-->
+    <!-- Populate data table -->
     {% for alarm in alarms %}
         <tr>
             <td>{{alarm.tag}}</td>
@@ -19,16 +23,10 @@
         </tr>
     {% endfor %}
 
+    <!-- Allow add alarm if user has permissions -->
     <tr>
         <td colspan="3">
-            <a href=http://localhost:8000/admin/tables/alarm/add/?refObject={{tag}}>Add New Alarm</a>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addAlarmModal">
-                Add New Alarm
-            </button>
+            <a data-toggle="modal" data-target="#addAlarmModal"><strong>(+) Add New Alarm</strong></a>
         </td>
     </tr>
 
@@ -37,7 +35,7 @@
 <!-- Add Alarm Modal -->
 <div class="modal fade" id="addAlarmModal" tabindex="-1" role="dialog"></div>
 
-<!--Script to call alarm modal form-->
+<!-- Script to call alarm modal form -->
 <script>
     $('#addAlarmModal').on('show.bs.modal', function (event) {
         var modal = $(this)
@@ -49,6 +47,7 @@
         });
     })
 </script>
+
 
 
 

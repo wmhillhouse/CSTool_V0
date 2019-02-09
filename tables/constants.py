@@ -1,3 +1,5 @@
+# Login URL
+LOGIN_URL = '/tables/user_login/'
 
 # Short Text Length Fields
 SHORT_TEXT_LEN = 32
@@ -77,4 +79,10 @@ ALARM_PRIORITIES = (
     (2, 'High'),
     (3, 'Medium'),
     (4, 'Low')
+)
+
+EXTRA_DATA = (
+    ('alarms', False),
+    ('interlocks', False),
+    ('references', False)
 )

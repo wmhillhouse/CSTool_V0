@@ -31,11 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts',
+    # 'accounts',
     'tables',
-    'edit',
-    'widget_tweaks',
-    'django_tables2',
+    # 'edit',
+    # 'widget_tweaks',
+    # 'django_tables2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,7 +140,8 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Redirects to here if login is required and you are not logged in
-LOGIN_URL = "/user_login"
+# LOGIN_URL = "tables/user_login"
+
 
 
 

@@ -1,3 +1,5 @@
+from .constants import *
+
 from django.shortcuts import render
 
 from .models import CtrlObject, Instrument, Alarm, Drive
@@ -14,7 +16,7 @@ from django.views.generic import TemplateView
 # Libraries for Login
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 
 
 def user_login(request):
@@ -25,26 +27,31 @@ def user_login(request):
 
         user = authenticate(username=username, password=password)
 
+
         if user:
             if user.is_active:
                 login(request, user)
                 return HttpResponseRedirect(reverse('tables:user_login'))
             else:
                 return HttpResponse("Account not active.")
+
+        # If user does not exist
         else:
             return HttpResponse("Invalid login details.")
+
+    # If request is not a POST -
     else:
         return render(request, 'tables/login.html', {})
 
 
-@login_required
+@login_required(login_url=LOGIN_URL)
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('tables:user_login'))
 
 
 # Creates a table of instruments
-@login_required
+@login_required(login_url=LOGIN_URL)
 def instruments(request):
 
     # Query all fields for all instruments and store in an ordered structure
@@ -60,26 +67,51 @@ def instruments(request):
 
 
 # Creates a detailed view of an instrument and the relevant linked information
-@login_required
-def instrument_details(request, tag):
+@login_required(login_url=LOGIN_URL)
+def details(request, tag):
+
+    test = CtrlObject.objects.filter(tag=tag)
+    test('type')
+
 
     # Query all fields for specified instrument and store in an ordered structure
     data = serializers.serialize("python", Instrument.objects.all().filter(tag=tag))
 
-    # Query all alrams allocated to specified instrument
+    # Query all alarms allocated to specified instrument
     alarms = Alarm.objects.all().filter(refObject=tag)
 
     context = {
         'title': "Instrument Details",
         'tag': tag,
         'data': data,
-        'alarms': alarms
+        'alarms': alarms,
+    }
+
+    return render(request, 'tables/instrument_details.html', context)
+
+
+# Creates a detailed view of an instrument and the relevant linked information
+@login_required(login_url=LOGIN_URL)
+def instrument_details(request, tag):
+
+    # Query all fields for specified instrument and store in an ordered structure
+    data = serializers.serialize("python", Instrument.objects.all().filter(tag=tag))
+
+    # Query all alarms allocated to specified instrument
+    alarms = Alarm.objects.all().filter(refObject=tag)
+
+    context = {
+        'title': "Instrument Details",
+        'tag': tag,
+        'data': data,
+        'alarms': alarms,
     }
 
     return render(request, 'tables/instrument_details.html', context)
 
 
 # Creates a table of instruments
+@login_required(login_url=LOGIN_URL)
 def drives(request):
 
     # Query all fields for all drives and store in an ordered structure
@@ -95,6 +127,7 @@ def drives(request):
 
 
 # Creates a detailed view of an instrument and the relevant linked information
+@login_required(login_url=LOGIN_URL)
 def actuator_details(request, tag):
 
     # Query all fields for specified drive and store in an ordered structure
@@ -126,10 +159,13 @@ from django.urls import reverse, reverse_lazy
 from django.template.loader import render_to_string
 
 
+
 class AlarmListView(ListView):
     model = models.Alarm
 
 
+# @login_required(login_url=LOGIN_URL)
+# @permission_required('tables.alarm.can_add_drive')
 class AlarmCreate(CreateView):
     model = Alarm
     fields = '__all__'

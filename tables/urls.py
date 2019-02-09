@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from . import views
 from django.urls import path
+from django.contrib.auth.decorators import login_required
 
 # Application Name
 app_name = 'tables'
@@ -17,5 +18,5 @@ urlpatterns = [
     path('instruments/<str:tag>/', views.instrument_details, name='instrument-details'),
     path('drives/<str:tag>/', views.actuator_details, name='actuator-details'),
     # Create view links
-    path('alarm/create',  views.AlarmCreate.as_view(), name='alarm-create')
+    path('alarm/create',  login_required(views.AlarmCreate.as_view()), name='alarm-create')
 ]
