@@ -1,0 +1,29 @@
+{% extends 'tables/header.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <h3 align="center">You are logged in.</h3>
+{% else %}
+
+        <form action="{% url 'tables:user_login' %}" method="post">
+            {% csrf_token %}
+            <table align="center">
+                <tr><td><h3>Login</h3></td></tr>
+                <tr>
+                    <td><label for="username">Username:</label></td>
+                    <td><input type="text" name="username" placeholder="Enter Username"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="" value="Login"></td>
+                </tr>
+            </table>
+
+        </form>
+{% endif %}
+
+{% endblock %}

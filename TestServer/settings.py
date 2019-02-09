@@ -128,15 +128,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+# Add all static files to this file path
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_files"),
 ]
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
-# Collects and stores all static files here
-# To collect all static files use command - python manage.py collectstatic --noinput --clear
+# The following command collects and stores all static files here
+# python manage.py collectstatic --noinput --clear
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# Redirects to here if login is required and you are not logged in
+LOGIN_URL = "/user_login"
 
 
 

@@ -11,7 +11,40 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
+# Libraries for Login
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.decorators import login_required
+
+
+def user_login(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+
+        if user:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect(reverse('tables:user_login'))
+            else:
+                return HttpResponse("Account not active.")
+        else:
+            return HttpResponse("Invalid login details.")
+    else:
+        return render(request, 'tables/login.html', {})
+
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('tables:user_login'))
+
+
 # Creates a table of instruments
+@login_required
 def instruments(request):
 
     # Query all fields for all instruments and store in an ordered structure
@@ -27,6 +60,7 @@ def instruments(request):
 
 
 # Creates a detailed view of an instrument and the relevant linked information
+@login_required
 def instrument_details(request, tag):
 
     # Query all fields for specified instrument and store in an ordered structure
@@ -100,7 +134,7 @@ class AlarmCreate(CreateView):
     model = Alarm
     fields = '__all__'
 
-    success_url = reverse_lazy('alarm-create')
+    success_url = reverse_lazy('tables:alarm-create')
 
     # def dispatch(self, *args, **kwargs):
     #     self.tag = kwargs['pk']

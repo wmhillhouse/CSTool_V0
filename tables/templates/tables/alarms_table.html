@@ -42,7 +42,7 @@
     $('#addAlarmModal').on('show.bs.modal', function (event) {
         var modal = $(this)
         $.ajax({
-            url: "{% url 'alarm-create' %}",
+            url: "{% url 'tables:alarm-create' %}",
             context: document.body
         }).done(function(response) {
             modal.html(response);
