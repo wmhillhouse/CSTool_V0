@@ -1,60 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+    <html lang="en">
+    <head>
+        <!--Bootstrap DataTables-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <!--Bootstrap DataTables-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+        {% load staticfiles %}
 
-    {% load staticfiles %}
+        <!-- Font Awesome -->
+        <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+        <!-- MDBootstrap Datatables  -->
+        <link href="{% static 'css/addons/dataTables.min.css' %}" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
-    <!-- MDBootstrap Datatables  -->
-    <link href="{% static 'css/addons/dataTables.min.css' %}" rel="stylesheet">
+        <!-- Column Visibility Button  -->
+        <link href="{% static 'css/buttons.dataTables.min.css' %}" rel="stylesheet">
 
-    <!-- Column Visibility Button  -->
-    <link href="{% static 'css/buttons.dataTables.min.css' %}" rel="stylesheet">
+        <!-- Your custom styles (optional)-->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-    <!-- Your custom styles (optional)-->
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+        <!-- MDBootstrap Datatables  -->
+        <script type="text/javascript" src="{% static 'js/addons/datatables.min.js' %}"></script>
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
-    <!-- MDBootstrap Datatables  -->
-    <script type="text/javascript" src="{% static 'js/addons/datatables.min.js' %}"></script>
+        <!-- Column Visibility Button  -->
+        <script type="text/javascript" src="{% static 'js/buttons.colVis.min.js' %}"></script>
+        <!-- Column Visibility Button  -->
+        <script type="text/javascript" src="{% static 'js/dataTables.buttons.min.js' %}"></script>
 
-    <!-- Column Visibility Button  -->
-    <script type="text/javascript" src="{% static 'js/buttons.colVis.min.js' %}"></script>
-    <!-- Column Visibility Button  -->
-    <script type="text/javascript" src="{% static 'js/dataTables.buttons.min.js' %}"></script>
+        <!-- CSV Button  -->
+        <script type="text/javascript" src="{% static 'js/buttons.flash.min.js' %}"></script>
+        <!-- CSV Button -->
+        <script type="text/javascript" src="{% static 'js/buttons.html5.min.js' %}"></script>
+        <!-- CSV Button -->
+        <script type="text/javascript" src="{% static 'js/jszip.min.js' %}"></script>
 
-    <!-- CSV Button  -->
-    <script type="text/javascript" src="{% static 'js/buttons.flash.min.js' %}"></script>
-    <!-- CSV Button -->
-    <script type="text/javascript" src="{% static 'js/buttons.html5.min.js' %}"></script>
-    <!-- CSV Button -->
-    <script type="text/javascript" src="{% static 'js/jszip.min.js' %}"></script>
+        <!-- Modal Forms Button -->
+        <script type="text/javascript" src="{% static 'js/jquery.form.js' %}"></script>
 
-    <!-- Modal Forms Button -->
-    <script type="text/javascript" src="{% static 'js/jquery.form.js' %}"></script>
-
-    <title>CSTool</title>
-</head>
-<body>
-        {% block content %}
-        {% endblock %}
-</body>
+        <title>CSTool</title>
+    </head>
 </html>

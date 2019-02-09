@@ -1,4 +1,4 @@
-{% extends 'tables/head.html' %}
+{% include 'tables/head.html' %}
 
 {% block content %}
 <div id='divId' class="modal-dialog modal-dialog-centered" role="document">
@@ -11,7 +11,7 @@
         </div>
 
         <div class="modal-body">
-            <form id="alarm_form" method="post" action="{% url 'alarm-create' %}">
+            <form id="alarm_form" method="post" action="{% url 'tables:alarm-create' %}">
                 {% csrf_token %}
                 {{ form.non_field_errors }}
                 <table>
