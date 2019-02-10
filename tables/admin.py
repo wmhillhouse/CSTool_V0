@@ -2,7 +2,7 @@ from django.contrib import admin
 from . import models
 
 
-class TagAdmin(admin.ModelAdmin):
+class IndexTagAdmin(admin.ModelAdmin):
     search_fields = ['tag', 'description']
     list_display = ['tag', 'description', 'type']
 
@@ -10,13 +10,15 @@ class TagAdmin(admin.ModelAdmin):
 class DocumentAdmin(admin.ModelAdmin):
 
     search_fields = ['tag', 'description']
-    list_display = ['tag', 'description']
+    list_display = ['index_tag', 'tag', 'description']
+    exclude = ['index_tag']
 
 
 class DocumentSectionAdmin(admin.ModelAdmin):
 
     search_fields = ['assigned_document']
-    list_display = ['assigned_document', 'order', 'section_number', 'description']
+    list_display = ['index_tag', 'assigned_document', 'order', 'section_number', 'description']
+    exclude = ['index_tag']
 
 
 class CtrlObjectAdmin(admin.ModelAdmin):
@@ -31,7 +33,7 @@ class DigitalIOAdmin(admin.ModelAdmin):
     list_display = ['tag', 'description']
 
 
-admin.site.register(models.Tag, TagAdmin)
+admin.site.register(models.IndexTag, IndexTagAdmin)
 
 admin.site.register(models.Document, DocumentAdmin)
 admin.site.register(models.DocumentSection, DocumentSectionAdmin)

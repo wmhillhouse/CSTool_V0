@@ -3,7 +3,7 @@ from .constants import *
 
 
 # Tags - A unique identifier for all items that are searchable and utilise referencing
-class Tag(models.Model):
+class IndexTag(models.Model):
 
     tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
     description = models.CharField(max_length=DESC_TEXT_LEN,
@@ -16,30 +16,62 @@ class Tag(models.Model):
         return self.tag
 
 
-# # Links a tag name to a related reference
+# Links a tag name to a related reference
 # class Reference(models.Model):
 #
-#     tag = models.ManyToManyField(Tag, related_name='item')
-#     reference = models.ManyToManyField(Tag, related_name='related_to')
+#     tag1 = models.ManyToManyField(Tag, related_name='tag')
+#     tag2 = models.ManyToManyField(Tag, related_name='reference')
 
 
 class Document (models.Model):
 
-    tag = models.OneToOneField(Tag, primary_key=True, on_delete=models.CASCADE)
+    tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
     description = models.CharField(max_length=DESC_TEXT_LEN, blank=True, default='')
     revision = models.FloatField(default=-1.0)
+    index_tag = models.OneToOneField(IndexTag, blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.tag
+
+    def save(self, *args, **kwargs):
+
+        self.index_tag = IndexTag.objects.create(
+            tag=self.tag,
+            description=self.description,
+            type='DOC'
+        )
+
+        if self.description == '':
+            self.description = 'autofill'
+
+        super(Document, self).save(*args, **kwargs)
 
 
 class DocumentSection (models.Model):
     class Meta:
             verbose_name_plural = 'Document Sections'
 
-    tag = models.OneToOneField(Tag, primary_key=True, on_delete=models.CASCADE)
+    tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
     description = models.CharField(max_length=DESC_TEXT_LEN, blank=True, default='')
     assigned_document = models.ForeignKey(Document, on_delete=models.CASCADE)
+    assigned_section = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
     hierarchy = models.PositiveSmallIntegerField(choices=HIERARCHY)
     order = models.PositiveIntegerField(unique=True)
     section_number = models.CharField(max_length=32)
+    index_tag = models.OneToOneField(IndexTag, blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.tag
+
+    def save(self, *args, **kwargs):
+
+        self.index_tag = IndexTag.objects.create(
+            tag=str(self.assigned_document) + '.' + self.tag,
+            description=self.description,
+            type='DOC_SEC'
+        )
+
+        super(DocumentSection, self).save(*args, **kwargs)
 
 
 class DocumentEntry (models.Model):
@@ -62,7 +94,7 @@ class CtrlObject(models.Model):
     type = models.CharField(max_length=32, choices=CTRL_OBJ_TYPE)
 
     def __str__(self):
-        return self.tag
+        return self.tag.name
 
 
 class Instrument(models.Model):
