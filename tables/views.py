@@ -2,7 +2,7 @@ from .constants import *
 
 from django.shortcuts import render
 
-from .models import CtrlObject, Instrument, Alarm, Drive
+from .models import *
 
 from django.core import serializers
 
@@ -10,6 +10,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
 # from .forms import CtrlObjectForm
+
+
 from django.views.generic import TemplateView
 
 
@@ -48,6 +50,22 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('tables:user_login'))
+
+
+# Creates a table of documents
+@login_required(login_url=LOGIN_URL)
+def document_list(request):
+
+    # Query all fields for all instruments and store in an ordered structure
+    data = serializers.serialize("python", Document.objects.all())
+
+    context = {
+        'title': "Documents",
+        'address': "documents",
+        'data': data,
+    }
+
+    return render(request, 'tables/general_table.html', context)
 
 
 # Creates a table of instruments

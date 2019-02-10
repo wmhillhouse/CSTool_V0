@@ -11,10 +11,13 @@ TAG_TEXT_LEN = 100
 DESC_TEXT_LEN = 200
 
 # Text Field Length for Documents
-DOC_TEXT_LEN = 100
+DOC_TEXT_LEN = 500
 
 # Choices for Object Type
 OBJ_TYPE = (
+    ('DOC', 'Document'),
+    ('DOC_SEC', 'Document Section'),
+    ('DOC_TEXT', 'Document Text'),
     ('DI', 'Digital Input'),
     ('DO', 'Digital Output'),
     ('AI', 'Analog Input'),
@@ -79,6 +82,13 @@ ALARM_PRIORITIES = (
     (2, 'High'),
     (3, 'Medium'),
     (4, 'Low')
+)
+
+HIERARCHY = (
+    (1, 'Level 1'),
+    (2, 'Level 2'),
+    (3, 'Level 3'),
+    (4, 'Level 4')
 )
 
 EXTRA_DATA = (
