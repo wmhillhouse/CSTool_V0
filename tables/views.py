@@ -14,6 +14,7 @@ from django.shortcuts import render
 
 from django.views.generic import TemplateView
 
+from django.apps import apps
 
 # Libraries for Login
 from django.contrib.auth import authenticate, login, logout
@@ -21,35 +22,63 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required, permission_required
 
 
+# User login
 def user_login(request):
 
+    # Proceed if the request method is POST
     if request.method == 'POST':
+        # Get username and password from POST request
         username = request.POST.get('username')
         password = request.POST.get('password')
 
+        # Check user authentication
         user = authenticate(username=username, password=password)
 
-
+        # If user exists - authentication is successful
         if user:
+
+            # If the user is active - log the user in and return the user to the login page
             if user.is_active:
                 login(request, user)
                 return HttpResponseRedirect(reverse('tables:user_login'))
+
+            # If the user is not active - notify the user
             else:
                 return HttpResponse("Account not active.")
 
-        # If user does not exist
+        # If user does not exist - notify the user
         else:
             return HttpResponse("Invalid login details.")
 
-    # If request is not a POST -
+    # If request is not the POST request, send an empty request
     else:
         return render(request, 'tables/login.html', {})
 
 
+# User logout
 @login_required(login_url=LOGIN_URL)
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('tables:user_login'))
+
+
+# Creates a generic list of items
+@login_required(login_url=LOGIN_URL)
+def generic_list(request, table_name):
+
+    # Get the table from the name of the table
+    table = apps.get_model('tables', table_name)
+
+    # Query all fields for all instruments and store in an ordered structure
+    data = serializers.serialize("python", table.objects.all())
+
+    context = {
+        'title': table._meta.object_name,
+        'address': table._meta.model_name,
+        'data': data,
+    }
+
+    return render(request, 'tables/general_table.html', context)
 
 
 # Creates a table of documents
@@ -177,7 +206,6 @@ from django.urls import reverse, reverse_lazy
 from django.template.loader import render_to_string
 
 
-
 class AlarmListView(ListView):
     model = models.Alarm
 
@@ -189,27 +217,3 @@ class AlarmCreate(CreateView):
     fields = '__all__'
 
     success_url = reverse_lazy('tables:alarm-create')
-
-    # def dispatch(self, *args, **kwargs):
-    #     self.tag = kwargs['pk']
-    #     return super(AlarmCreate, self).dispatch(*args, **kwargs)
-
-    # def form_valid(self, form):
-    #     form.save()
-    #     alarm = Alarm.objects.get(tag=self.tag)
-    #     return HttpResponse(render_to_string('tables/modal_form_success.html', {'alarm': alarm}))
-
-    # def form_valid(self, form):
-    #     self.object = form.save()
-    #     return render(self.request, 'http://localhost:8000/admin/tables/alarm', {'alarm': self.object})
-
-    # def get_initial(self):
-    #     tag = get_object_or_404(Tag, slug=self.kwargs.get('tag'))
-    #     return {
-    #         'tag': tag,
-    #     }
-
-    # def get_initial(self):
-    #     initial = super().get_initial()
-    #     initial['cpf'] = self.args[0]
-    #     return initial

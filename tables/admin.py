@@ -3,8 +3,9 @@ from . import models
 
 
 class IndexTagAdmin(admin.ModelAdmin):
-    search_fields = ['tag', 'description']
-    list_display = ['tag', 'description', 'type']
+    search_fields = ['tag']
+    list_filter = ['table']
+    list_display = ['table', 'tag']
 
 
 class DocumentAdmin(admin.ModelAdmin):
@@ -21,10 +22,10 @@ class DocumentSectionAdmin(admin.ModelAdmin):
     exclude = ['index_tag']
 
 
-class CtrlObjectAdmin(admin.ModelAdmin):
-
-    search_fields = ['tag', 'description']
-    list_display = ['tag', 'description']
+# class CtrlObjectAdmin(admin.ModelAdmin):
+#
+#     search_fields = ['tag', 'description']
+#     list_display = ['tag', 'description']
 
 
 class DigitalIOAdmin(admin.ModelAdmin):
@@ -39,7 +40,7 @@ admin.site.register(models.Document, DocumentAdmin)
 admin.site.register(models.DocumentSection, DocumentSectionAdmin)
 admin.site.register(models.DocumentEntry)
 
-admin.site.register(models.CtrlObject, CtrlObjectAdmin)
+# admin.site.register(models.CtrlObject, CtrlObjectAdmin)
 
 admin.site.register(models.Instrument)
 admin.site.register(models.DigitalIO, DigitalIOAdmin)

@@ -33,6 +33,11 @@ OBJ_TYPE = (
     ('CABINET', 'Cabinet'),
 )
 
+IO_TYPE = (
+    ('INPUT', 'Input'),
+    ('OUTPUT', 'Output')
+)
+
 # Choices for Control Object Type
 CTRL_OBJ_TYPE = (
     ('DI', 'Digital Input'),
