@@ -28,10 +28,31 @@ class DocumentSectionAdmin(admin.ModelAdmin):
 #     list_display = ['tag', 'description']
 
 
+class InstrumentAdmin(admin.ModelAdmin):
+
+    search_fields = ['tag', 'description']
+    list_display = ['tag', 'description']
+    exclude = ['index_tag']
+
+
 class DigitalIOAdmin(admin.ModelAdmin):
 
     search_fields = ['tag', 'description']
     list_display = ['tag', 'description']
+    exclude = ['index_tag']
+
+
+class DigitalIOAdmin(admin.ModelAdmin):
+
+    search_fields = ['tag', 'description']
+    list_display = ['tag', 'description']
+    exclude = ['index_tag']
+
+class AnalogIOAdmin(admin.ModelAdmin):
+
+    search_fields = ['tag', 'description']
+    list_display = ['tag', 'description']
+    exclude = ['index_tag']
 
 
 admin.site.register(models.IndexTag, IndexTagAdmin)
@@ -42,8 +63,9 @@ admin.site.register(models.DocumentEntry)
 
 # admin.site.register(models.CtrlObject, CtrlObjectAdmin)
 
-admin.site.register(models.Instrument)
+admin.site.register(models.Instrument, InstrumentAdmin)
 admin.site.register(models.DigitalIO, DigitalIOAdmin)
+admin.site.register(models.AnalogIO, AnalogIOAdmin)
 
 admin.site.register(models.Drive)
 

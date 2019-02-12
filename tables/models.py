@@ -1,19 +1,17 @@
 from django.db import models
 from .constants import *
 from django.apps import apps
+from model_utils import FieldTracker
 
 
 # Tags - A unique identifier for all items that are searchable and utilise referencing
 class IndexTag(models.Model):
 
+    tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
     table = models.CharField(max_length=32)
-    tag = models.CharField(max_length=TAG_TEXT_LEN)
 
     def __str__(self):
-        return self.table + '.' + self.tag
-
-    class Meta:
-        unique_together = ('table', 'tag')
+        return self.tag
 
 
 # Custom Database Object - All database objects
@@ -29,17 +27,17 @@ class CustomDatabaseObject(models.Model):
         return self.tag
 
     # Defines custom index name
-    def get_index(self):
-        return str(self.tag)
+    def create_index(self):
+        return self.tag
 
     # New save method
     def save(self, *args, **kwargs):
 
-        # Automatically create index tag on save - this will fail if a unique tag has not been created
+        # Automatically create index tag on save
         self.index_tag, created = IndexTag.objects.update_or_create(
-            tag=self.get_index(),
+            tag=self.index_tag,
             defaults={
-                'tag': self.tag,
+                'tag': self.create_index(),
                 'table': self._meta.object_name})
 
         # Save the model
@@ -70,25 +68,11 @@ class DocumentSection (CustomDatabaseObject):
     order = models.PositiveIntegerField(blank=True, null=True)
     section_number = models.CharField(max_length=32, blank=True, null=True)
 
-    # Defines custom index name
-    def get_index(self):
-        return str(self.assigned_document) + '.' + self.tag
+    tracker = FieldTracker()
 
-    # New save method
-    # # Modify normal index tag creation to have a custom string as part of the tag
-    # def save(self, *args, **kwargs):
-    #
-    #     # Automatically create index tag on save - this will fail if a unique tag has not been created
-    #     self.index_tag = IndexTag.objects.create(
-    #         tag=str(self.assigned_document) + '.' + self.tag,
-    #         table=self._meta.object_name
-    #     )
-    #
-    #     # A horrendously convoluted way to get a generic variable for this model class
-    #     this_model = apps.get_model('tables', self.__class__.__name__)
-    #
-    #     # Save the model
-    #     super(this_model, self).save(*args, **kwargs)
+    # Defines custom index name
+    def create_index(self):
+        return str(self.assigned_document) + '.' + self.tag
 
 
 class DocumentEntry (models.Model):
@@ -109,34 +93,40 @@ class CtrlObject(models.Model):
     description = models.CharField(max_length=DESC_TEXT_LEN, blank=True, default='')
     type = models.CharField(max_length=32, choices=CTRL_OBJ_TYPE)
 
-    def __str__(self):
-        return self.tag
+    # Control Object Methods....
+    # .... Can't remember ...
 
 
 class Instrument(CustomDatabaseObject):
 
-    io_allocation = models.CharField(max_length=TAG_TEXT_LEN, blank=True, default='')
+    io_allocation = models.CharField(max_length=TAG_TEXT_LEN, verbose_name='IO Allocation', blank=True, default='')
     cabinet = models.CharField(max_length=TAG_TEXT_LEN, blank=True, default='')
-    pid_doc = models.CharField(max_length=DOC_TEXT_LEN, blank=True, default='')
-    schematic_doc = models.CharField(max_length=DOC_TEXT_LEN, blank=True, default='')
-    termination_doc = models.CharField(max_length=DOC_TEXT_LEN, blank=True, default='')
+    pid_doc = models.CharField(max_length=DOC_TEXT_LEN, verbose_name='P&ID', blank=True, default='')
+    schematic_doc = models.CharField(max_length=DOC_TEXT_LEN, verbose_name='Schematic', blank=True, default='')
+    termination_doc = models.CharField(max_length=DOC_TEXT_LEN, verbose_name='Termination', blank=True, default='')
 
 
 class DigitalIO (CustomDatabaseObject):
     class Meta:
             verbose_name_plural = 'Digital IO'
 
-    type = models.CharField(max_length=32, choices=IO_TYPE)
-    on_description = models.CharField(max_length=100, default='On')
-    off_description = models.CharField(max_length=100, default='Off')
+    type = models.CharField(max_length=32, choices=IO_TYPE, default='INPUT')
+    on_description = models.CharField(max_length=DESC_TEXT_LEN, blank=True, default='On')
+    off_description = models.CharField(max_length=DESC_TEXT_LEN, blank=True, default='Off')
 
 
-# class AnalogIO (Instrument):
-#     class Meta:
-#             verbose_name_plural = 'Digital IO'
-#
-#     type = models.CharField(max_length=32, choices=IO_TYPE)
+class AnalogIO (Instrument):
+    class Meta:
+            verbose_name_plural = 'Analog IO'
 
+    type = models.CharField(max_length=32, choices=IO_TYPE, default='INPUT')
+    range = models.CharField(max_length=32, blank=True, default='0-100')
+    units = models.CharField(max_length=32, blank=True, default='')
+    hh_sp = models.FloatField(verbose_name='High High Setpoint', blank=True, default=95.0)
+    h_sp = models.FloatField(verbose_name='High Setpoint', blank=True, default=90.0)
+    l_sp = models.FloatField(verbose_name='Low Setpoint', blank=True, default=10.0)
+    ll_sp = models.FloatField(verbose_name='Low Low Setpoint', blank=True, default=5.0)
+    hysteresis = models.FloatField(verbose_name="Hysteresis", blank=True, default=1.0)
 
 # class Digital_IO(models.Model):
 #     class Meta:

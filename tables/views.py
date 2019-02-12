@@ -78,7 +78,39 @@ def generic_list(request, table_name):
         'data': data,
     }
 
-    return render(request, 'tables/general_table.html', context)
+    return render(request, 'tables/generic_table.html', context)
+
+
+# Creates a detailed view of an instrument and the relevant linked information
+@login_required(login_url=LOGIN_URL)
+def generic_details(request, tag, table_name):
+
+    # Get the table from the name of the table
+    table = apps.get_model('tables', table_name)
+
+    # Query all fields for specified instrument and store in an ordered structure
+    data = serializers.serialize("python", table.objects.all().filter(tag=tag))
+
+    # Get child data - TBA
+    # child_data = None
+
+    # Query all alarms allocated to specified instrument
+    alarms = Alarm.objects.all().filter(refObject=tag)
+
+    # Query all interlocks allocated to specified instrument
+    interlocks = None
+
+    context = {
+        'title': table._meta.object_name,
+        'table_name': table_name,
+        'tag': tag,
+        'parent_data': data,
+        # 'child_data': child_data,
+        'alarms': alarms,
+        'interlocks': interlocks,
+    }
+
+    return render(request, 'tables/generic_details.html', context)
 
 
 # Creates a table of documents
@@ -94,7 +126,7 @@ def document_list(request):
         'data': data,
     }
 
-    return render(request, 'tables/general_table.html', context)
+    return render(request, 'tables/generic_table.html', context)
 
 
 # Creates a table of instruments
@@ -110,31 +142,7 @@ def instruments(request):
         'data': data,
     }
 
-    return render(request, 'tables/general_table.html', context)
-
-
-# Creates a detailed view of an instrument and the relevant linked information
-@login_required(login_url=LOGIN_URL)
-def details(request, tag):
-
-    test = CtrlObject.objects.filter(tag=tag)
-    test('type')
-
-
-    # Query all fields for specified instrument and store in an ordered structure
-    data = serializers.serialize("python", Instrument.objects.all().filter(tag=tag))
-
-    # Query all alarms allocated to specified instrument
-    alarms = Alarm.objects.all().filter(refObject=tag)
-
-    context = {
-        'title': "Instrument Details",
-        'tag': tag,
-        'data': data,
-        'alarms': alarms,
-    }
-
-    return render(request, 'tables/instrument_details.html', context)
+    return render(request, 'tables/generic_table.html', context)
 
 
 # Creates a detailed view of an instrument and the relevant linked information
@@ -144,14 +152,22 @@ def instrument_details(request, tag):
     # Query all fields for specified instrument and store in an ordered structure
     data = serializers.serialize("python", Instrument.objects.all().filter(tag=tag))
 
+    # Get child data - TBA
+    child_data = None
+
     # Query all alarms allocated to specified instrument
     alarms = Alarm.objects.all().filter(refObject=tag)
+
+    # Query all interlocks allocated to specified instrument
+    interlocks = None
 
     context = {
         'title': "Instrument Details",
         'tag': tag,
         'data': data,
+        'child_data': child_data,
         'alarms': alarms,
+        'interlocks': interlocks,
     }
 
     return render(request, 'tables/instrument_details.html', context)
@@ -170,7 +186,7 @@ def drives(request):
         'data': data,
     }
 
-    return render(request, 'tables/general_table.html', context)
+    return render(request, 'tables/generic_table.html', context)
 
 
 # Creates a detailed view of an instrument and the relevant linked information
