@@ -14,9 +14,9 @@ urlpatterns = [
     # List view links'
     path('<str:table_name>', views.generic_list, name='list'),
     # path('documents', views.document_list, name='document-list'),
-    # path('instruments2', views.instruments, name='instrument-list'),
-    # path('drives2', views.drives, name='drive-list'),
-    # path('alarms2', views.AlarmListView.as_view(), name='alarm-list'),
+    path('instrument', views.generic_list, name='instrument-list'),
+    path('drive', views.drives, name='drive-list'),
+    path('alarm', views.generic_list, name='alarm-list'),
     # Details view links
     path('<str:table_name>/<str:tag>', views.generic_details, name='details'),
     path('instruments/<str:tag>/', views.instrument_details, name='instrument-details'),
