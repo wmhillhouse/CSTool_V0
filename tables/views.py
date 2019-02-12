@@ -78,7 +78,7 @@ def generic_list(request, table_name):
         'data': data,
     }
 
-    return render(request, 'tables/generic_table.html', context)
+    return render(request, 'tables/table.html', context)
 
 
 # Creates a detailed view of an instrument and the relevant linked information
@@ -88,11 +88,11 @@ def generic_details(request, tag, table_name):
     # Get the table from the name of the table
     table = apps.get_model('tables', table_name)
 
-    # Query all fields for specified instrument and store in an ordered structure
+    # Query all fields for specified item and store in an ordered structure
     data = serializers.serialize("python", table.objects.all().filter(tag=tag))
 
     # Get child data - TBA
-    # child_data = None
+    child_data = None
 
     # Query all alarms allocated to specified instrument
     alarms = Alarm.objects.all().filter(refObject=tag)
@@ -100,17 +100,21 @@ def generic_details(request, tag, table_name):
     # Query all interlocks allocated to specified instrument
     interlocks = None
 
+    # Query all reference data - TBA
+    reference_data = None
+
     context = {
         'title': table._meta.object_name,
         'table_name': table_name,
         'tag': tag,
-        'parent_data': data,
-        # 'child_data': child_data,
+        'data': data,
+        'child_data': child_data,
         'alarms': alarms,
         'interlocks': interlocks,
+        'reference_data': reference_data
     }
 
-    return render(request, 'tables/generic_details.html', context)
+    return render(request, 'tables/details.html', context)
 
 
 # Creates a table of documents
@@ -126,7 +130,7 @@ def document_list(request):
         'data': data,
     }
 
-    return render(request, 'tables/generic_table.html', context)
+    return render(request, 'tables/table.html', context)
 
 
 # Creates a table of instruments
@@ -142,7 +146,7 @@ def instruments(request):
         'data': data,
     }
 
-    return render(request, 'tables/generic_table.html', context)
+    return render(request, 'tables/table.html', context)
 
 
 # Creates a detailed view of an instrument and the relevant linked information
@@ -186,7 +190,7 @@ def drives(request):
         'data': data,
     }
 
-    return render(request, 'tables/generic_table.html', context)
+    return render(request, 'tables/table.html', context)
 
 
 # Creates a detailed view of an instrument and the relevant linked information

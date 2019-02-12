@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1536017f-da7a-445a-91fe-8bc6434ec6f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tables/templates/tables/generic_details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestServer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestServer/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/templates/tables/general_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/generic_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables/templates/tables/generic_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables/templates/tables/generic_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/views.py" afterDir="false" />
     </list>
@@ -62,8 +58,8 @@
           <entry key="dummy" value="12" />
           <entry key="html" value="14332" />
           <entry key="js" value="431" />
-          <entry key="py" value="25640" />
-          <entry key="txt" value="2289" />
+          <entry key="py" value="25778" />
+          <entry key="txt" value="2389" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -71,8 +67,8 @@
           <entry key="CSS" value="550" />
           <entry key="HTML" value="14332" />
           <entry key="JavaScript" value="431" />
-          <entry key="PLAIN_TEXT" value="2301" />
-          <entry key="Python" value="25640" />
+          <entry key="PLAIN_TEXT" value="2401" />
+          <entry key="Python" value="25778" />
           <entry key="Scratch" value="57" />
         </counts>
       </usages-collector>
@@ -96,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/tables/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+              <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -119,18 +115,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tables/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+            <state relative-caret-position="442">
+              <caret line="113" column="40" lean-forward="true" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tables/templates/tables/generic_details.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -518,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549890794802</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Modified models. Looks good. Still working on inheritence with Instruments -&gt; DIO/AIO etc.">
+      <created>1549973849316</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1549973849316</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -538,7 +536,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49522293" weight="0.23802042" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4936306" weight="0.23802042" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -546,7 +544,7 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49920383" weight="0.3299293" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49761146" weight="0.32914376" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.77149683" weight="0.23644933" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5047771" side_tool="true" visible="true" weight="0.23644933" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5063694" side_tool="true" visible="true" weight="0.23644933" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49732143" weight="0.32968238" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -597,7 +595,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loop through dict working" />
     <MESSAGE value="javascript filter running. Filters out headings &amp; filter column. Does not filter dynamically." />
     <MESSAGE value="Bootstrap datatables loaded into static files with the following scripts working (sort, search, pagination)." />
     <MESSAGE value="Links working to instrument ID." />
@@ -622,7 +619,8 @@
     <MESSAGE value="Created new models for documents, document sections &amp; document entries." />
     <MESSAGE value="Modified document, document_section &amp; index_tag model. Index tags automatically created on save." />
     <MESSAGE value="Modified all models... still very buggy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified all models... still very buggy." />
+    <MESSAGE value="Modified models. Looks good. Still working on inheritence with Instruments -&gt; DIO/AIO etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified models. Looks good. Still working on inheritence with Instruments -&gt; DIO/AIO etc." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tables/templates/tables/drives.html" />
@@ -823,7 +821,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/generic_table.html">
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/table.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
@@ -892,16 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tables/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -912,13 +900,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/templates/tables/generic_details.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/tables/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/templates/tables/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tables/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+        <state relative-caret-position="442">
+          <caret line="113" column="40" lean-forward="true" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
