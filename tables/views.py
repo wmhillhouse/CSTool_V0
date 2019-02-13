@@ -117,6 +117,42 @@ def generic_details(request, tag, table_name):
     return render(request, 'tables/details.html', context)
 
 
+# Creates a detailed view of an instrument and the relevant linked information
+@login_required(login_url=LOGIN_URL)
+def document_edit(request, tag):
+
+    # Query all fields for specified item and store in an ordered structure
+    document = serializers.serialize("python", Document.objects.all().filter(tag=tag))
+
+    # Get document sections
+    sections = serializers.serialize("python", DocumentSection.objects.all().filter(assigned_doc=tag))
+
+    # Get all document entries assigned to these section
+    entries = serializers.serialize("python", DocumentEntry.objects.all().filter(assigned_doc=tag))
+
+    # Query all alarms allocated to specified instrument
+    alarms = None
+
+    # Query all interlocks allocated to specified instrument
+    interlocks = None
+
+    # Query all reference data - TBA
+    reference_data = None
+
+    context = {
+        'title': 'Test',
+        'tag': tag,
+        'document': document,
+        'sections': sections,
+        'entries': entries,
+        'alarms': alarms,
+        'interlocks': interlocks,
+        'reference_data': reference_data
+    }
+
+    return render(request, 'tables/details.html', context)
+
+
 # Creates a table of documents
 @login_required(login_url=LOGIN_URL)
 def document_list(request):

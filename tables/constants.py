@@ -58,11 +58,11 @@ ANALOG_IO_TYPE = {
     ('AO', 'Analog Output')
 }
 
-EVENT_TYPES = (
+LOGIC_SUFFIX = (
     ('CUSTOM', 'Custom'),
     ('FLT', 'Fault'),
     ('ON', 'On'),
-    ('OFF', 'Off'),
+    ('NOT_ON', 'NOT ON'),
     ('HH', 'High High'),
     ('H', 'High'),
     ('L', 'Low'),

@@ -1,0 +1,33 @@
+{% extends 'tables/header.html' %}
+
+<h2>{{title}}</h2>
+<ul class="collection">
+
+    <!--Create Data Table-->
+    <table id="dataTbl" class="table-condensed" width="100%">
+
+        <!--Populate data table-->
+        {% for section in sections.field %}
+            <tr>
+            {% for field in section.fields.items %}
+                <!-- Create link to details page for "tag" field -->
+                {% if field.0 == 'tag' %}
+                    <td><a href=/{{address}}/{{field.1}}>{{field.1}}</a></td>
+                {% else %}
+                    <td>{{field.1}}</td>
+                {% endif %}
+
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        <tfoot>
+            <tr>
+            {% for field in data.0.fields.items %}
+                <th>{{field.0}}</th>
+            {% endfor %}
+            </tr>
+        </tfoot>
+    </table>
+
+
+{% block content %}

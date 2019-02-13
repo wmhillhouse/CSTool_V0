@@ -15,7 +15,7 @@ urlpatterns = [
     path('<str:table_name>', views.generic_list, name='list'),
     # path('documents', views.document_list, name='document-list'),
     path('instrument', views.generic_list, name='instrument-list'),
-    path('drive', views.drives, name='drive-list'),
+    path('drive', views.generic_list, name='drive-list'),
     path('alarm', views.generic_list, name='alarm-list'),
     # Details view links
     path('<str:table_name>/<str:tag>', views.generic_details, name='details'),
