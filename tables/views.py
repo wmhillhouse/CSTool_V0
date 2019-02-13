@@ -122,13 +122,13 @@ def generic_details(request, tag, table_name):
 def document_edit(request, tag):
 
     # Query all fields for specified item and store in an ordered structure
-    document = serializers.serialize("python", Document.objects.all().filter(tag=tag))
+    document = Document.objects.all().filter(tag=tag)
 
     # Get document sections
-    sections = serializers.serialize("python", DocumentSection.objects.all().filter(assigned_doc=tag))
+    sections = serializers.serialize("python", DocumentSection.objects.all().filter(assigned_document=document))
 
     # Get all document entries assigned to these section
-    entries = serializers.serialize("python", DocumentEntry.objects.all().filter(assigned_doc=tag))
+    entries = serializers.serialize("python", DocumentEntry.objects.all().filter(assigned_document=document))
 
     # Query all alarms allocated to specified instrument
     alarms = None
