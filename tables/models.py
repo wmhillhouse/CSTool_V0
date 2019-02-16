@@ -3,6 +3,8 @@ from .constants import *
 from django.apps import apps
 from model_utils import FieldTracker
 
+from mptt.models import MPTTModel, TreeForeignKey
+
 
 # Tags - A unique identifier for all items that are searchable and utilise referencing
 class IndexTag(models.Model):
@@ -69,33 +71,58 @@ class CustomDatabaseObject(models.Model):
 
 
 class Document (CustomDatabaseObject):
+    tag = models.CharField(verbose_name='Document Number', unique=True, max_length=TAG_TEXT_LEN, )
+    description = models.CharField(verbose_name='Title', max_length=DESC_TEXT_LEN, blank=True, default='')
 
     revision = models.FloatField(default=-1.0)
 
 
-class DocumentSection (CustomDatabaseObject):
-    class Meta:
-            verbose_name_plural = 'Document Sections'
-
-    section_number = models.CharField(max_length=32, null=True)
+class DocumentSection (MPTTModel):
     assigned_document = models.ForeignKey(Document, on_delete=models.CASCADE)
-    assigned_section = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
-    hierarchy = models.PositiveSmallIntegerField(choices=HIERARCHY)
-    # order = models.PositiveIntegerField(blank=True, null=True)
+    parent = TreeForeignKey('self', blank=True, null=True, related_name='child',
+                            verbose_name='Assigned Section', db_index=True, on_delete=models.CASCADE)
+    tag = models.CharField(editable=False, max_length=TAG_TEXT_LEN)
+    description = models.CharField(verbose_name='Heading', max_length=DESC_TEXT_LEN, blank=True, default='')
+    order = models.IntegerField(blank=True, null=True, default=-1)
 
-    # Defines custom index name
-    def create_index(self):
-        return str(self.assigned_document) + '.' + self.tag
-
-    # Defines the tag as the section number
+    # Function to allow child instances to automatically generate tag without modifying the parent save method
     def create_tag(self):
-        return self.section_number
+        return
 
-    def create_description(self):
-        if self.description == '':
-            return "I'm a goddamn document section"
-        else:
-            return self.description
+    class MPTTMeta:
+        order_insertion_by = ['order']
+
+    def __str__(self):
+        return self.tag
+
+    # New save method
+    def save(self, *args, **kwargs):
+
+        # Pre-save the model
+        super(DocumentSection, self).save(*args, **kwargs)
+
+        # If no order is blank - add to end
+        if not self.order != -1:
+            self.order = self.get_siblings().count()
+
+        # Auto generate tag
+        auto_tag = '%02d' % self.order
+        parent = self.parent
+
+        # Get all parent node data
+        while parent:
+            auto_tag = '%02d.' % parent.order + auto_tag
+            parent = parent.parent
+
+        # Save tag with document number assigned
+        self.tag = str(self.assigned_document) + '.' + auto_tag
+
+        # Save all children on save to update section numbering
+        for child in self.get_children():
+            child.save()
+
+        # Post-save the model
+        super(DocumentSection, self).save(*args, **kwargs)
 
 
 class DocumentEntry (CustomDatabaseObject):

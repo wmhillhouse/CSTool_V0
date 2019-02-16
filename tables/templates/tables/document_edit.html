@@ -2,21 +2,23 @@
 
 {% block content %}
 
-<h2>{{title}}</h2>
+<h1>{{title}}</h1>
 <ul class="collection">
 
     <!--Create Data Table-->
     <table id="dataTbl" class="table-condensed" width="100%">
 
         <!--Populate data table-->
-        {% for section in sections.field %}
-            {% for field in section.fields.items %}
-                {% if field.0 == 'text' %}
-                <tr><td>{{field.1}}</td></tr>
-                {% endif %}
+        {% for l1_section in l1_sections %}
+            <tr><td><h2>{{section.tag}}</h2></td></tr>
+            {% l2_sections = DocumentSection.objects.filter(assigned_section=section) %}
+            {% for l2_section in l2_sections %}
+                <tr><td><h3>{{section.tag}}</h3></td></tr>
             {% endfor %}
+
         {% endfor %}
 
     </table>
+</ul>
 
 {% endblock %}
