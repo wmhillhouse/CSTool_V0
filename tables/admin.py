@@ -37,11 +37,11 @@ class DocumentSectionAdmin(MPTTModelAdmin):
     list_editable = ['order']
 
 
-class DocumentEntryAdmin(admin.ModelAdmin):
+class DocumentEntryAdmin(MPTTModelAdmin):
 
-    search_fields = ['tag', 'description']
-    list_display = ['index_tag', 'tag', 'description']
-    exclude = ['index_tag']
+    search_fields = ['text']
+    # list_filter = ['assigned_section']
+    # list_display = ['assigned_section', 'id']
 
 
 class InstrumentAdmin(admin.ModelAdmin):

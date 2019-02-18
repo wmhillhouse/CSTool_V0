@@ -1,12 +1,10 @@
 from django.db import models
 from .constants import *
-from django.apps import apps
 from model_utils import FieldTracker
-
 from mptt.models import MPTTModel, TreeForeignKey
 
 
-# Tags - A unique identifier for all items that are searchable and utilise referencing
+# Index Tags - A unique identifier for all items that are searchable and utilise referencing
 class IndexTag(models.Model):
 
     tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
@@ -98,6 +96,8 @@ class DocumentSection (MPTTModel):
         verbose_name = 'Document Section'
         verbose_name_plural = 'Document Sections'
 
+    # instance.type_b is the object which you want to delete
+
     # New save method
     def save(self, *args, **kwargs):
 
@@ -108,6 +108,7 @@ class DocumentSection (MPTTModel):
         if parent:
             self.assigned_document = parent.assigned_document
 
+        #TODO - Check if this can be done inside the if statement below
         # Pre-save the model (to allow a call to .get_siblings)
         super(DocumentSection, self).save(*args, **kwargs)
 
@@ -144,7 +145,7 @@ class DocumentSection (MPTTModel):
         self.index_tag, created = IndexTag.objects.update_or_create(
             tag=self.index_tag,
             defaults={
-                'tag': str('%05d' % self.id),
+                'tag': str('DocSec_%05d' % self.id),
                 'description': str(self.assigned_document) + '.' + auto_tag,
                 'table': self._meta.object_name})
 
@@ -152,16 +153,15 @@ class DocumentSection (MPTTModel):
         super(DocumentSection, self).save(*args, **kwargs)
 
 
-class DocumentEntry (CustomDatabaseObject):
+class DocumentEntry (MPTTModel):
     class Meta:
             verbose_name_plural = 'Document Entries'
 
-    # Overwrites parent object fields
-    tag = models.CharField(max_length=TAG_TEXT_LEN, editable=False, blank=True)
-    description = models.CharField(max_length=DESC_TEXT_LEN, blank=True, default='')
+    # assigned_section = TreeForeignKey(DocumentSection, on_delete=models.CASCADE)
+    parent = TreeForeignKey(DocumentSection, blank=True, null=True, related_name='entry',
+                            verbose_name='Assigned Section', db_index=True, on_delete=models.CASCADE)
 
-    assigned_document = models.ForeignKey(Document, on_delete=models.CASCADE)
-    assigned_section = models.ForeignKey(DocumentSection, on_delete=models.CASCADE)
+    order = models.IntegerField(default=99)
     text = models.TextField(max_length=DOC_TEXT_LEN, blank=True, default='')
 
     # order = models.PositiveIntegerField(unique=True, auto_created=True)
@@ -170,8 +170,19 @@ class DocumentEntry (CustomDatabaseObject):
     # def save_user_profile(sender, instance, **kwargs):
     #     instance.profile.save()
 
-    def create_tag(self):
-        return str(self.id)
+    # New save method
+    def save(self, *args, **kwargs):
+
+        # If order is the default value - add to end of list of siblings
+        if self.order == 99:
+            # Pre-save the model if it hasn't been saved yet - to allow call of get_siblings()
+            super(DocumentEntry, self).save(*args, **kwargs)
+
+            # Set order to last
+            self.order = self.get_siblings().count() + 1
+
+        # Post-save the model
+        super(DocumentEntry, self).save(*args, **kwargs)
 
 
 # Control Object
