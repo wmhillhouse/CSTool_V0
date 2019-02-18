@@ -10,6 +10,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 class IndexTag(models.Model):
 
     tag = models.CharField(unique=True, max_length=TAG_TEXT_LEN)
+    description = models.CharField(max_length=TAG_TEXT_LEN)
     table = models.CharField(max_length=32)
 
     def __str__(self):
@@ -56,6 +57,7 @@ class CustomDatabaseObject(models.Model):
             tag=self.index_tag,
             defaults={
                 'tag': self.create_index(),
+                'description': self.tag,
                 'table': self._meta.object_name})
 
     # New save method
@@ -91,6 +93,10 @@ class DocumentSection (MPTTModel):
 
     def __str__(self):
         return self.tag
+
+    class Meta:
+        verbose_name = 'Document Section'
+        verbose_name_plural = 'Document Sections'
 
     # New save method
     def save(self, *args, **kwargs):
@@ -138,7 +144,8 @@ class DocumentSection (MPTTModel):
         self.index_tag, created = IndexTag.objects.update_or_create(
             tag=self.index_tag,
             defaults={
-                'tag': '__UID' + str('%04d' % self.id) + '__' + str(self.assigned_document) + '.' + auto_tag,
+                'tag': str('%05d' % self.id),
+                'description': str(self.assigned_document) + '.' + auto_tag,
                 'table': self._meta.object_name})
 
         # Post-save the model

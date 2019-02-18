@@ -5,9 +5,9 @@ from mptt.admin import DraggableMPTTAdmin, MPTTModelAdmin
 
 
 class IndexTagAdmin(admin.ModelAdmin):
-    search_fields = ['tag']
+    search_fields = ['tag', 'description']
     list_filter = ['table']
-    list_display = ['table', 'tag']
+    list_display = ['table', 'tag', 'description']
 
 
 class DocumentAdmin(admin.ModelAdmin):
