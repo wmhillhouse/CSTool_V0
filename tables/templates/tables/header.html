@@ -19,19 +19,19 @@
                             <div class="dropdown-menu">
 
                                 <!-- Index -->
-                                <a class="dropdown-item" href="#">Index</a>
+                                <a class="dropdown-item" href="{% url 'tables:list' table_name='indexTag' %}">Index</a>
 
                                 <!-- Instruments Table -->
-                                <a class="dropdown-item" href="{% url 'tables:instrument-list' %}">Instruments</a>
+                                <a class="dropdown-item" href="{% url 'tables:list' table_name='instrument' %}">Instruments</a>
 
                                 <!-- Drives Table -->
-                                <a class="dropdown-item" href="{% url 'tables:drive-list' %}">Drives</a>
+                                <a class="dropdown-item" href="{% url 'tables:list' table_name='drive' %}">Drives</a>
 
                                 <!-- Valves Table -->
                                 <a class="dropdown-item" href="#">Valves</a>
 
                                 <!-- Alarms Table -->
-                                <a class="dropdown-item" href="{% url 'tables:alarm-list' %}">Alarms</a>
+                                <a class="dropdown-item" href="{% url 'tables:list' table_name='alarm' %}">Alarms</a>
 
                                 <!-- All Models -->
                                 <a class="dropdown-item" href="#">Database Models</a>
