@@ -78,16 +78,13 @@ class Document (CustomDatabaseObject):
 
 
 class DocumentSection (MPTTModel):
-    assigned_document = models.ForeignKey(Document, on_delete=models.CASCADE)
+    assigned_document = models.ForeignKey(Document, on_delete=models.CASCADE, blank=True, null=True,)
     parent = TreeForeignKey('self', blank=True, null=True, related_name='child',
                             verbose_name='Assigned Section', db_index=True, on_delete=models.CASCADE)
     tag = models.CharField(editable=False, max_length=TAG_TEXT_LEN)
     description = models.CharField(verbose_name='Heading', max_length=DESC_TEXT_LEN, blank=True, default='')
-    order = models.IntegerField(blank=True, null=True, default=-1)
-
-    # Function to allow child instances to automatically generate tag without modifying the parent save method
-    def create_tag(self):
-        return
+    order = models.IntegerField(default=99)
+    index_tag = models.OneToOneField(IndexTag, blank=True, null=True, on_delete=models.CASCADE)
 
     class MPTTMeta:
         order_insertion_by = ['order']
@@ -98,28 +95,51 @@ class DocumentSection (MPTTModel):
     # New save method
     def save(self, *args, **kwargs):
 
-        # Pre-save the model
+        # Get parent
+        parent = self.parent
+
+        # If parent assigned - assign document to parent's assigned document
+        if parent:
+            self.assigned_document = parent.assigned_document
+
+        # Pre-save the model (to allow a call to .get_siblings)
         super(DocumentSection, self).save(*args, **kwargs)
 
-        # If no order is blank - add to end
-        if not self.order != -1:
-            self.order = self.get_siblings().count()
+        # If order is the default value - add to end of list of siblings
+        if self.order == 99:
+            self.order = self.get_siblings().count() + 1
 
-        # Auto generate tag
+        # Auto generate tag - Current Section
         auto_tag = '%02d' % self.order
-        parent = self.parent
 
         # Get all parent node data
         while parent:
+            # If a parent exists - save the assigned document of the parent
+            self.assigned_document = parent.assigned_document
+
+            # Auto generate tag - Parent Sections
             auto_tag = '%02d.' % parent.order + auto_tag
+
+            # Iterate up the chain
             parent = parent.parent
 
-        # Save tag with document number assigned
-        self.tag = str(self.assigned_document) + '.' + auto_tag
+        if self.assigned_document:
+            # Save tag with document number assigned
+            self.tag = auto_tag
+
+        # Re-calculate the tree order
+        self._tree_manager.rebuild()
 
         # Save all children on save to update section numbering
         for child in self.get_children():
             child.save()
+
+        # Automatically create index tag on save
+        self.index_tag, created = IndexTag.objects.update_or_create(
+            tag=self.index_tag,
+            defaults={
+                'tag': '__UID' + str('%04d' % self.id) + '__' + str(self.assigned_document) + '.' + auto_tag,
+                'table': self._meta.object_name})
 
         # Post-save the model
         super(DocumentSection, self).save(*args, **kwargs)

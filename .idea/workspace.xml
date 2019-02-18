@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1536017f-da7a-445a-91fe-8bc6434ec6f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestServer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestServer/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tables/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/templates/tables/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/templates/tables/document_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/tables/templates/tables/document_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +35,7 @@
           <entry key="css" value="35" />
           <entry key="html" value="199" />
           <entry key="js" value="13" />
-          <entry key="py" value="294" />
+          <entry key="py" value="295" />
           <entry key="scss" value="2" />
         </counts>
       </usages-collector>
@@ -51,7 +45,7 @@
           <entry key="HTML" value="199" />
           <entry key="JavaScript" value="13" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="294" />
+          <entry key="Python" value="295" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
@@ -62,8 +56,8 @@
           <entry key="dummy" value="12" />
           <entry key="html" value="14839" />
           <entry key="js" value="431" />
-          <entry key="py" value="31910" />
-          <entry key="txt" value="2515" />
+          <entry key="py" value="33410" />
+          <entry key="txt" value="2581" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -71,8 +65,8 @@
           <entry key="CSS" value="550" />
           <entry key="HTML" value="14839" />
           <entry key="JavaScript" value="431" />
-          <entry key="PLAIN_TEXT" value="2527" />
-          <entry key="Python" value="31910" />
+          <entry key="PLAIN_TEXT" value="2593" />
+          <entry key="Python" value="33410" />
           <entry key="Scratch" value="57" />
         </counts>
       </usages-collector>
@@ -80,11 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tables/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="123" column="19" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
+            <state relative-caret-position="646">
+              <caret line="146" column="47" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -92,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tables/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="604">
+              <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -122,6 +116,7 @@
       <find>&quot;</find>
       <find>CtrlObject</find>
       <find>apps.</find>
+      <find>DocumentSectionAdmin</find>
     </findStrings>
     <dirStrings>
       <dir>C:\DjangoServer\TestServer</dir>
@@ -181,10 +176,10 @@
         <option value="$PROJECT_DIR$/tables/urls.py" />
         <option value="$PROJECT_DIR$/tables/templates/tables/details.html" />
         <option value="$PROJECT_DIR$/tables/templates/tables/document_edit.html" />
-        <option value="$PROJECT_DIR$/TestServer/settings.py" />
         <option value="$PROJECT_DIR$/tables/views.py" />
-        <option value="$PROJECT_DIR$/tables/admin.py" />
+        <option value="$PROJECT_DIR$/TestServer/settings.py" />
         <option value="$PROJECT_DIR$/tables/models.py" />
+        <option value="$PROJECT_DIR$/tables/admin.py" />
       </list>
     </option>
   </component>
@@ -530,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550060617990</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Modified document section model to use mptt hierarchy. Ongoing.">
+      <created>1550290998299</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1550290998299</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -609,7 +611,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Backup" />
     <MESSAGE value="Selectable columns working" />
     <MESSAGE value="Lost pagination button." />
     <MESSAGE value="Pagination fixed." />
@@ -634,7 +635,8 @@
     <MESSAGE value="Fixed URL bug" />
     <MESSAGE value="Superficial changes to models.. Working on document edit." />
     <MESSAGE value="Working on document edit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on document edit." />
+    <MESSAGE value="Modified document section model to use mptt hierarchy. Ongoing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified document section model to use mptt hierarchy. Ongoing." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tables/templates/tables/instruments.html" />
@@ -922,27 +924,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TestServer/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tables/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="346">
+          <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tables/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="123" column="19" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
+        <state relative-caret-position="646">
+          <caret line="146" column="47" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from . import models
 from .models import *
-from mptt.admin import DraggableMPTTAdmin
+from mptt.admin import DraggableMPTTAdmin, MPTTModelAdmin
 
 
 class IndexTagAdmin(admin.ModelAdmin):
@@ -17,11 +17,24 @@ class DocumentAdmin(admin.ModelAdmin):
     exclude = ['index_tag']
 
 
-# class DocumentSectionAdmin(admin.ModelAdmin):
-#
-#     search_fields = ['assigned_document']
-#     list_display = ['index_tag', 'assigned_document', 'section_number', 'description']
-#     exclude = ['index_tag']
+class DocumentSectionInLine(admin.TabularInline):
+    model = DocumentSection
+
+    list_display = ['tag', 'description']
+    exclude = ['assigned_document', 'index_tag']
+
+
+class DocumentSectionAdmin(MPTTModelAdmin):
+
+    mptt_level_indent = 50
+
+    inlines = [
+        DocumentSectionInLine,
+    ]
+
+    list_filter = ['assigned_document']
+    list_display = ['tag', 'description', 'order', 'assigned_document']
+    list_editable = ['order']
 
 
 class DocumentEntryAdmin(admin.ModelAdmin):
@@ -51,25 +64,12 @@ class AnalogIOAdmin(admin.ModelAdmin):
     list_display = ['tag', 'description']
     exclude = ['index_tag']
 
-############################################################
-
-
-class DocumentSectionAdmin(DraggableMPTTAdmin):
-    # search_fields = ['tag', 'description']
-    list_filter = ['assigned_document']
-    # list_display = ['assigned_document', 'indented_title', 'tag', 'description']
-    # exclude = ['index_tag']
-
-
-admin.site.register(DocumentSection, DocumentSectionAdmin)
-
-###
-
 
 admin.site.register(IndexTag, IndexTagAdmin)
 
 admin.site.register(Document, DocumentAdmin)
-# admin.site.register(DocumentSection, DocumentSectionAdmin)
+admin.site.register(DocumentSection, DocumentSectionAdmin)
+
 admin.site.register(DocumentEntry, DocumentEntryAdmin)
 
 # admin.site.register(models.CtrlObject, CtrlObjectAdmin)
