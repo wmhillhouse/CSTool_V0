@@ -44,6 +44,13 @@ class DocumentEntryAdmin(MPTTModelAdmin):
     # list_display = ['assigned_section', 'id']
 
 
+class DocumentTextAdmin(admin.ModelAdmin):
+
+    search_fields = ['text']
+    # list_filter = ['assigned_section']
+    # list_display = ['assigned_section', 'id']
+
+
 class InstrumentAdmin(admin.ModelAdmin):
 
     search_fields = ['tag', 'description']
@@ -69,6 +76,8 @@ admin.site.register(IndexTag, IndexTagAdmin)
 
 admin.site.register(Document, DocumentAdmin)
 admin.site.register(DocumentSection, DocumentSectionAdmin)
+
+admin.site.register(DocumentText, DocumentTextAdmin)
 
 admin.site.register(DocumentEntry, DocumentEntryAdmin)
 

@@ -153,6 +153,15 @@ class DocumentSection (MPTTModel):
         super(DocumentSection, self).save(*args, **kwargs)
 
 
+class DocumentText (models.Model):
+    class Meta:
+            verbose_name_plural = 'Document Text'
+
+    assigned_section = models.ForeignKey(DocumentSection,on_delete=models.DO_NOTHING)
+    order = models.IntegerField(default=99)
+    text = models.TextField(max_length=DOC_TEXT_LEN, blank=True, default='')
+
+
 class DocumentEntry (MPTTModel):
     class Meta:
             verbose_name_plural = 'Document Entries'

@@ -2,23 +2,26 @@
 
 {% block content %}
 
+{% load mptt_tags %}
+
 <h1>{{title}}</h1>
-<ul class="collection">
 
-    <!--Create Data Table-->
-    <table id="dataTbl" class="table-condensed" width="100%">
 
-        <!--Populate data table-->
-        {% for l1_section in l1_sections %}
-            <tr><td><h2>{{section.tag}}</h2></td></tr>
-            {% l2_sections = DocumentSection.objects.filter(assigned_section=section) %}
-            {% for l2_section in l2_sections %}
-                <tr><td><h3>{{section.tag}}</h3></td></tr>
-            {% endfor %}
+<table id="detailsTbl" class="table table-striped table-bordered table-condensed" width="100%">
 
-        {% endfor %}
+    <th>Table of Contents</th>
+    <!-- Recurse through table.... fuck knows how.. -->
+    {% recursetree sections %}
+        <tr>
+            <td>{{ node.tag }} - {{ node.description }}</td>
+            {% if not node.is_leaf_node %}
+                {{ children }}
+            {% endif %}
+        </tr>
+    {% endrecursetree %}
 
-    </table>
-</ul>
+
+
+</table>
 
 {% endblock %}

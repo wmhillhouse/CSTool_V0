@@ -18,10 +18,10 @@ urlpatterns = [
     # path('drives', views.generic_list, name='drive-list'),
     # path('alarms', views.generic_list, name='alarm-list'),
     # Details view links
-    path('lists/<str:table_name>/<str:tag>', views.generic_details, name='details'),
+    # path('lists/<str:table_name>/<str:tag>', views.generic_details, name='details'),
     path('document/<str:tag>/', views.document_edit, name='document-edit'),
-    path('instruments/<str:tag>/', views.instrument_details, name='instrument-details'),
-    path('drives/<str:tag>/', views.actuator_details, name='actuator-details'),
+    # path('instruments/<str:tag>/', views.instrument_details, name='instrument-details'),
+    # path('drives/<str:tag>/', views.actuator_details, name='actuator-details'),
     # Create view links
     path('alarm/create',  login_required(views.AlarmCreate.as_view()), name='alarm-create')
 ]

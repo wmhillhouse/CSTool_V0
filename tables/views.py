@@ -122,40 +122,21 @@ def generic_details(request, tag, table_name):
 def document_edit(request, tag):
 
     # Query all fields for specified item and store in an ordered structure
-    document = Document.objects.all().filter(tag=tag).first()
+    document = Document.objects.filter(tag=tag).first()
 
-    # Get document sections
-    all_sections = DocumentSection.objects.filter(assigned_document=document)
+    # Document Sections with the specified assigned document
+    sections = DocumentSection.objects.filter(assigned_document=document)
 
-    # Generate section hierarchy
-    l1_sections = all_sections.objects.filter(assigned_section=None)
-
-    # section_heirarchy = {}
-    # for l1_section in l1_sections:
-    #     l2_sections = {section: }
-
-
-    # Get all document entries assigned to these section
-    # entries = serializers.serialize("python", DocumentEntry.objects.filter(assigned_document=document))
-
-    # Query all alarms allocated to specified instrument
-    alarms = None
-
-    # Query all interlocks allocated to specified instrument
-    interlocks = None
-
-    # Query all reference data - TBA
-    reference_data = None
+    # Document Entries that are assigned to the filtered list of document sections
+    # document_text = DocumentText.objects.filter(itemsets__in=sections)
+    document_text = DocumentText.objects.all()
 
     context = {
         'title': document.description,
         'tag': tag,
         'document': document,
-        # 'sections': sections,
-        # 'entries': entries,
-        'alarms': alarms,
-        'interlocks': interlocks,
-        'reference_data': reference_data
+        'sections': sections,
+        'document_text': document_text,
     }
 
     return render(request, 'tables/document_edit.html', context)
