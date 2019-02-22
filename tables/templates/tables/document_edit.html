@@ -6,21 +6,66 @@
 
 <h1>{{title}}</h1>
 
-
-<table id="detailsTbl" class="table table-striped table-bordered table-condensed" width="100%">
+<table id="contentstbl" class="table-bordered table-sm" width="100%">
 
     <th>Table of Contents</th>
     <!-- Recurse through table.... fuck knows how.. -->
     {% recursetree sections %}
+
         <tr>
             <td>{{ node.tag }} - {{ node.description }}</td>
-            {% if not node.is_leaf_node %}
-                {{ children }}
-            {% endif %}
         </tr>
+        <!-- If the node has children - loop into the children -->
+        {% if not node.is_leaf_node %}
+            {{ children }}
+        {% endif %}
+
     {% endrecursetree %}
 
+</table>
 
+<br>
+
+
+
+    <!-- Recurse through table.... fuck knows how.. -->
+    {% recursetree sections %}
+
+        <h4>{{ node.tag }} - {{ node.description }}</h4>
+
+        <!-- Loop through all text allocated to the current section -->
+        {% for text in document_text %}
+
+            <!-- Show all text that is assigned to the current section -->
+            {% if text.assigned_section == node %}
+                <form id={{ text.id }} method="post", action="">
+                    <tr>
+                        <th>Edit</th>
+                        <th>Text</th>
+                    </tr>
+                    <table id="detailsTbl" class="table table-hover table-sm" width="100%">
+                        <tr>
+                            <td><a href="#"><button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-pencil">Edit</span></button></a></td>
+                            <td>{{text.text}}</td>
+                        </tr>
+                    </table>
+
+                </form>
+            {% endif %}
+
+        {% endfor %}
+
+        <!-- Button to add text -->
+
+        <button type="button" class="btn-basic btn-sm">+</button>
+
+        <!-- If the node has children - loop into the children -->
+        {% if not node.is_leaf_node %}
+            {{ children }}
+        {% endif %}
+
+    {% endrecursetree %}
 
 </table>
 
