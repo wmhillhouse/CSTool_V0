@@ -38,20 +38,13 @@
 
             <!-- Show all text that is assigned to the current section -->
             {% if text.assigned_section == node %}
-                <form id={{ text.id }} method="post", action="">
-                    <tr>
-                        <th>Edit</th>
-                        <th>Text</th>
-                    </tr>
+
                     <table id="detailsTbl" class="table table-hover table-sm" width="100%">
                         <tr>
-                            <td><a href="#"><button type="button" class="btn btn-default">
-                                <span class="glyphicon glyphicon-pencil">Edit</span></button></a></td>
                             <td>{{text.text}}</td>
                         </tr>
                     </table>
 
-                </form>
             {% endif %}
 
         {% endfor %}

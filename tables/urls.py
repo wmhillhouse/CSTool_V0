@@ -1,7 +1,8 @@
 from django.conf.urls import url
 from . import views
-from django.urls import path
+from django.urls import include, path
 from django.contrib.auth.decorators import login_required
+
 
 # Application Name
 app_name = 'tables'

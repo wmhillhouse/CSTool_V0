@@ -31,14 +31,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'tables',
-    'mptt',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Internal Apps #
+    'tables',
+    # External Apps
+    'mptt',
+    'inplaceeditform',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +71,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'TestServer.wsgi.application'
 
@@ -139,7 +143,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # Redirects to here if login is required and you are not logged in
 # LOGIN_URL = "tables/user_login"
 
-
+# Django Inplace-Edit
+TEMPLATE_CONTEXT_PROCESSORS = (
+    #...#
+    'django.core.context_processors.request',
+    #...#
+)
 
 
 
