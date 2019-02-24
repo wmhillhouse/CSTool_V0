@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include('tables.urls')),
    # url(r'^inplaceeditform/', include('inplaceeditform.urls')),
-    path('inplaceeditform/', include('inplaceeditform.urls')),
+   # path('inplaceeditform/', include('inplaceeditform.urls')),
 ]
 

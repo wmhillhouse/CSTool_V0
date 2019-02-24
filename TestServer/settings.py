@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'tables',
     # External Apps
     'mptt',
-    'inplaceeditform',
+    # 'inplaceeditform',
 ]
 
 MIDDLEWARE = [
